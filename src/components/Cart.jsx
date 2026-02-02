@@ -30,14 +30,14 @@ export const Cart = ({
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-end md:items-center md:justify-end p-4 md:p-6 animate-fade-in">
       <div className="w-full md:w-96 h-[85vh] md:h-auto md:max-h-[90vh] bg-white rounded-t-3xl md:rounded-2xl overflow-y-auto shadow-2xl border-t-4 md:border-4 border-secondary">
         {/* Header */}
-        <div className="sticky top-0 bg-gradient-to-r from-primary to-secondary p-4 md:p-6 border-b border-primary/20 flex justify-between items-center rounded-t-3xl md:rounded-t-2xl">
+        <div className="sticky top-0 bg-linear-to-r from-primary to-secondary p-4 md:p-6 border-b border-primary/20 flex justify-between items-center rounded-t-3xl md:rounded-t-2xl">
           <h2 className="text-2xl md:text-3xl font-thin text-white flex items-center gap-2">
             <span className="text-3xl">🛒</span>
             Your Cart
           </h2>
           <button
             onClick={onClose}
-            className="text-2xl text-white hover:text-white/80 transition-colors duration-200 font-thin hover:scale-125"
+            className="text-2xl text-black hover:text-black/70 transition-colors duration-200 font-thin hover:scale-125"
           >
             ✕
           </button>
@@ -58,7 +58,7 @@ export const Cart = ({
               {cart.map((item) => (
                 <div
                   key={item.id}
-                  className="flex gap-3 md:gap-4 bg-gradient-to-r from-slate-50 to-blue-50 p-3 md:p-4 rounded-xl items-center justify-between border border-slate-200 hover:border-secondary transition-colors duration-200 group"
+                  className="flex gap-3 md:gap-4 bg-linear-to-r from-slate-50 to-blue-50 p-3 md:p-4 rounded-xl items-center justify-between border border-slate-200 hover:border-secondary transition-colors duration-200 group"
                 >
                   <div className="flex-1 min-w-0">
                     <h4 className="font-thin text-sm md:text-base text-black group-hover:text-primary transition-colors duration-200">
@@ -111,7 +111,7 @@ export const Cart = ({
             </div>
 
             {/* Total */}
-            <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-4 md:p-6 text-right border-t-2 border-slate-200">
+            <div className="bg-linear-to-r from-slate-50 to-blue-50 p-4 md:p-6 text-right border-t-2 border-slate-200">
               <h3 className="text-2xl md:text-3xl font-thin text-primary">
                 ₦{total.toLocaleString()}
               </h3>
@@ -160,9 +160,10 @@ export const Cart = ({
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-secondary to-primary hover:shadow-lg text-black py-3 md:py-4 rounded-lg font-thin transition-all duration-300 text-lg shadow-md border border-primary/20 hover:scale-105 transform"
+                className="w-full bg-green-600 hover:bg-green-700 hover:shadow-lg text-white py-3 md:py-4 rounded-lg font-thin transition-all duration-300 text-lg shadow-md border border-green-700 hover:scale-105 transform flex items-center justify-center gap-2"
               >
-                Order on WhatsApp 💬
+                <i className="fab fa-whatsapp"></i>
+                CheckOut
               </button>
             </form>
           </>

@@ -8,7 +8,8 @@ export const useCart = () => {
     const savedCart = localStorage.getItem("olambola_cart");
     if (savedCart) {
       try {
-        setCart(JSON.parse(savedCart));
+        const parsedCart = JSON.parse(savedCart);
+        setCart(parsedCart);
       } catch (err) {
         console.error("Error loading cart:", err);
       }
