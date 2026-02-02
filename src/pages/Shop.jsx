@@ -39,7 +39,7 @@ Name: ${checkoutData.fullName}
 Phone: ${checkoutData.phone}
     `.trim();
 
-    const whatsappUrl = `https://wa.me/2347018318756?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/2348180129670?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
 
     clearCart();
@@ -138,7 +138,7 @@ Phone: ${checkoutData.phone}
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/2347018318756"
+              href="https://wa.me/2348180129670"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-8 text-center cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 group border border-green-400/30"
@@ -175,8 +175,7 @@ Phone: ${checkoutData.phone}
       {/* Footer */}
       <footer className="bg-slate-950 text-center py-8 border-t-2 border-secondary/30">
         <p className="text-white/70 font-thin text-sm md:text-base">
-          © 2026 Olambola Frozen Food. All rights reserved. | Delivering quality
-          since 2026
+          © 2026 Olambola Frozen Food. All rights reserved.
         </p>
       </footer>
     </>
