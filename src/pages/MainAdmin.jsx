@@ -22,7 +22,7 @@ export const MainAdmin = () => {
   return (
     <>
       <AdminNav />
-      <div className="flex min-h-screen bg-linear-to-br from-slate-50 via-blue-50 to-slate-100">
+      <div className="flex min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
         {/* Mobile Overlay */}
         <div
           className={`fixed inset-0 bg-black/50 z-30 md:hidden transition-opacity duration-300 ${

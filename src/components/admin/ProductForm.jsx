@@ -203,7 +203,7 @@ export const ProductForm = ({
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full bg-linear-to-r from-primary to-secondary hover:from-blue-800 hover:to-blue-600 text-black font-thin py-2.5 xs:py-3 sm:py-3 md:py-4 rounded-lg xs:rounded-xl transition-all transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-xs xs:text-sm sm:text-base md:text-lg"
+        className="w-full bg-slate-950 hover:bg-slate-900 text-white font-thin py-2.5 xs:py-3 sm:py-3 md:py-4 rounded-lg xs:rounded-xl transition-all transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-xs xs:text-sm sm:text-base md:text-lg"
       >
         {isLoading
           ? "Saving..."
@@ -214,4 +214,3 @@ export const ProductForm = ({
     </form>
   );
 };
-

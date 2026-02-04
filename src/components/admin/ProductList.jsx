@@ -44,7 +44,7 @@ export const ProductList = ({
                   <p className="text-xs text-black text-opacity-50 line-clamp-1 font-thin">
                     {product.description}
                   </p>
-                  <span className="inline-block bg-linear-to-r from-blue-100 to-blue-50 text-black px-2 py-0.5 rounded-lg text-xs font-thin border border-blue-200 mt-2">
+                  <span className="inline-block bg-gradient-to-r from-blue-100 to-blue-50 text-black px-2 py-0.5 rounded-lg text-xs font-thin border border-blue-200 mt-2">
                     {product.category}
                   </span>
                 </div>

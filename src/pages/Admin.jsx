@@ -146,7 +146,7 @@ export const Admin = () => {
                     setEditingProduct(null);
                     setShowForm(true);
                   }}
-                  className="bg-green-600 hover:bg-green-700 text-white px-6 xs:px-7 sm:px-9 md:px-12 py-3 xs:py-3.5 md:py-4.5 rounded-lg xs:rounded-xl md:rounded-2xl font-bold transition-all transform hover:scale-105 shadow-lg md:shadow-xl hover:shadow-2xl text-sm xs:text-base md:text-lg btn-sleek w-full xs:w-auto flex items-center justify-center gap-2"
+                  className="bg-slate-950 hover:bg-slate-900 text-white px-6 xs:px-7 sm:px-9 md:px-12 py-3 xs:py-3.5 md:py-4.5 rounded-lg xs:rounded-xl md:rounded-2xl font-bold transition-all transform hover:scale-105 shadow-lg md:shadow-xl hover:shadow-2xl text-sm xs:text-base md:text-lg btn-sleek w-full xs:w-auto flex items-center justify-center gap-2"
                 >
                   <i className="fas fa-plus"></i>
                   <span>Add New Product</span>
