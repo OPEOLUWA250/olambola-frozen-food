@@ -32,20 +32,22 @@ export const Cart = ({
         {/* Header */}
         <div className="sticky top-0 bg-linear-to-r from-primary to-secondary p-4 md:p-6 border-b border-primary/20 flex justify-between items-center rounded-t-3xl md:rounded-t-2xl">
           <h2 className="text-2xl md:text-3xl font-thin text-white flex items-center gap-2">
-            <span className="text-3xl">🛒</span>
+            <i className="fas fa-shopping-cart"></i>
             Your Cart
           </h2>
           <button
             onClick={onClose}
-            className="text-2xl text-black hover:text-black/70 transition-colors duration-200 font-thin hover:scale-125"
+            className="text-2xl text-white hover:text-white/70 transition-colors duration-200 font-thin hover:scale-125"
           >
-            ✕
+            <i className="fas fa-times"></i>
           </button>
         </div>
 
         {cart.length === 0 ? (
           <div className="p-8 md:p-10 text-center text-black text-lg font-thin">
-            <div className="text-6xl mb-4">🛒</div>
+            <div className="text-6xl mb-4 text-slate-400">
+              <i className="fas fa-shopping-cart"></i>
+            </div>
             <p>Your cart is empty</p>
             <p className="text-black/60 text-sm mt-2">
               Add some products to get started!
@@ -104,7 +106,7 @@ export const Cart = ({
                     onClick={() => onRemove(item.id)}
                     className="text-red-500 hover:text-red-700 font-thin hover:scale-125 transition-transform duration-200"
                   >
-                    ✕
+                    <i className="fas fa-trash"></i>
                   </button>
                 </div>
               ))}

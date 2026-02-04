@@ -1,27 +1,40 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { supabase } from "../services/supabase";
 
 export const useAdminManagement = () => {
   const [admins, setAdmins] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const fetchAdmins = async () => {
-    if (!supabase) return;
+  const fetchAdmins = useCallback(async () => {
+    if (!supabase) {
+      console.error("Supabase not configured");
+      setError("Supabase is not configured");
+      setAdmins([]);
+      return;
+    }
     setLoading(true);
+    setError(null);
     try {
-      const { data, error } = await supabase
+      const { data, error: fetchError } = await supabase
         .from("admins")
-        .select("id, email, role, created_at")
-        .order("created_at", { ascending: false });
+        .select("id, email, role, created_at");
 
-      if (error) throw error;
-      setAdmins(data || []);
+      if (fetchError) {
+        console.error("Supabase error:", fetchError);
+        throw new Error(fetchError.message || "Failed to fetch admins");
+      }
+
+      setAdmins(Array.isArray(data) ? data : []);
+      setError(null);
     } catch (err) {
       console.error("Error fetching admins:", err);
+      setError(err.message);
+      setAdmins([]);
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   const addAdmin = async (email, password) => {
     if (!supabase) throw new Error("Supabase not configured");
@@ -98,6 +111,7 @@ export const useAdminManagement = () => {
   return {
     admins,
     loading,
+    error,
     fetchAdmins,
     addAdmin,
     updateAdminPassword,

@@ -79,16 +79,18 @@ export const ProductList = ({
               <div className="flex gap-2">
                 <button
                   onClick={() => onEdit(product)}
-                  className="flex-1 bg-linear-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-2 py-2 rounded-lg text-xs font-thin transition-all transform hover:scale-105 shadow-md"
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white px-2 py-2 rounded-lg text-xs font-thin transition-all transform hover:scale-105 shadow-md flex items-center justify-center gap-1"
                 >
-                  ✏️ Edit
+                  <i className="fas fa-edit"></i>
+                  <span>Edit</span>
                 </button>
                 <button
                   onClick={() => onDelete(product.id)}
                   disabled={isLoading}
-                  className="flex-1 bg-linear-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-2 py-2 rounded-lg text-xs font-thin transition-all transform hover:scale-105 shadow-md disabled:opacity-50"
+                  className="flex-1 bg-red-600 hover:bg-red-700 text-white px-2 py-2 rounded-lg text-xs font-thin transition-all transform hover:scale-105 shadow-md disabled:opacity-50 flex items-center justify-center gap-1"
                 >
-                  🗑️ Delete
+                  <i className="fas fa-trash"></i>
+                  <span>Delete</span>
                 </button>
               </div>
             </div>
@@ -207,16 +209,18 @@ export const ProductList = ({
                   <td className="px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-5 text-center space-x-1 sm:space-x-2">
                     <button
                       onClick={() => onEdit(product)}
-                      className="bg-linear-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-thin transition-all transform hover:scale-105 shadow-md inline-block"
+                      className="bg-green-600 hover:bg-green-700 text-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-thin transition-all transform hover:scale-105 shadow-md inline-flex items-center gap-1"
                     >
-                      ✏️ Edit
+                      <i className="fas fa-edit"></i>
+                      <span>Edit</span>
                     </button>
                     <button
                       onClick={() => onDelete(product.id)}
                       disabled={isLoading}
-                      className="bg-linear-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-thin transition-all transform hover:scale-105 shadow-md disabled:opacity-50 inline-block"
+                      className="bg-red-600 hover:bg-red-700 text-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-thin transition-all transform hover:scale-105 shadow-md disabled:opacity-50 inline-flex items-center gap-1"
                     >
-                      🗑️ Delete
+                      <i className="fas fa-trash"></i>
+                      <span>Delete</span>
                     </button>
                   </td>
                 </tr>

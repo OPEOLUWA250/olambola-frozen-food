@@ -46,6 +46,10 @@ Phone: ${checkoutData.phone}
     setShowCart(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <Navbar cartCount={cartCount} onCartClick={() => setShowCart(true)} />
@@ -82,8 +86,8 @@ Phone: ${checkoutData.phone}
             {loading ? (
               <div className="text-center py-16 md:py-20 lg:py-24">
                 <div className="inline-block animate-fade-in">
-                  <div className="text-5xl md:text-6xl mb-4 animate-bounce-slow">
-                    🐟
+                  <div className="text-5xl md:text-6xl mb-4 animate-bounce-slow text-primary">
+                    <i className="fas fa-fish"></i>
                   </div>
                   <p className="text-black font-thin text-base sm:text-lg md:text-xl">
                     Loading premium products...
@@ -117,73 +121,92 @@ Phone: ${checkoutData.phone}
       </div>
 
       {/* Contact Footer */}
-      <section className="bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 py-12 sm:py-16 md:py-20 lg:py-24 px-3 sm:px-4 md:px-6">
-        <div className="w-full max-w-7xl mx-auto">
-          <div className="text-center mb-10 sm:mb-12 md:mb-14 lg:mb-16 animate-fade-in">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-thin mb-2 sm:mb-3 text-white">
+      <section className="bg-slate-950 py-12 sm:py-16 md:py-20 lg:py-24 px-3 sm:px-4 md:px-6 relative overflow-hidden">
+        <div className="w-full max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16 sm:mb-20 md:mb-24 animate-fade-in">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thin mb-3 sm:mb-4 text-white">
               Get in Touch
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-white/80 font-thin px-2">
-              Reach out to us through any of these channels
+            <p className="text-sm sm:text-base md:text-lg text-white/70 font-thin px-2 mb-4">
+              Choose your favorite way to connect with us
             </p>
-            <div className="h-1 w-8 sm:w-12 md:w-16 bg-secondary mx-auto mt-3 sm:mt-4 rounded-full"></div>
+            <div className="h-1.5 w-16 sm:w-20 bg-linear-to-r from-primary to-secondary mx-auto rounded-full"></div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
-            {/* Phone */}
-            <div
-              className="bg-linear-to-br from-primary to-secondary rounded-2xl p-6 sm:p-7 md:p-8 text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group border border-primary/20 animate-scale-in"
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8 lg:gap-10 max-w-6xl mx-auto">
+            {/* Phone Card - White Background */}
+            <a
+              href="tel:07018318756"
+              className="group relative bg-white rounded-2xl p-5 sm:p-6 md:p-7 text-center hover:shadow-lg transition-all duration-500 animate-scale-in transform hover:-translate-y-1 cursor-pointer"
               style={{ animationDelay: "0ms" }}
             >
-              <div className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 text-white group-hover:scale-110 transition-transform duration-300">
-                <i className="fas fa-phone"></i>
+              <div className="relative">
+                <div className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 text-primary group-hover:scale-110 transition-all duration-500">
+                  <i className="fas fa-phone"></i>
+                </div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-thin mb-2 sm:mb-3 text-black">
+                  Call Us
+                </h3>
+                <p className="text-black font-thin text-sm sm:text-base md:text-lg mb-3 group-hover:text-primary transition-colors duration-300">
+                  0701 831 8756
+                </p>
+                <p className="text-black/60 font-thin text-xs">
+                  Available 24/7
+                </p>
               </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl font-thin mb-2 sm:mb-3 text-white">
-                Call Us
-              </h3>
-              <a
-                href="tel:07018318756"
-                className="text-white hover:text-white/80 transition-colors text-sm sm:text-base md:text-lg font-thin break-all hover:underline"
-              >
-                0701 831 8756
-              </a>
-            </div>
+            </a>
 
-            {/* WhatsApp */}
+            {/* WhatsApp Card - Green Background */}
             <a
               href="https://wa.me/2348180129670"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-linear-to-br from-green-500 to-green-600 rounded-2xl p-6 sm:p-7 md:p-8 text-center cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 group border border-green-400/30 animate-scale-in"
+              className="group relative bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-6 sm:p-7 md:p-8 text-center cursor-pointer hover:shadow-lg hover:shadow-green-500/40 transition-all duration-500 animate-scale-in transform hover:-translate-y-1 sm:col-span-2 lg:col-span-1 sm:scale-105 lg:scale-100 border-2 border-green-400/50"
               style={{ animationDelay: "100ms" }}
             >
-              <div className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 text-white group-hover:scale-110 transition-transform duration-300">
-                <i className="fab fa-whatsapp"></i>
+              <div className="relative">
+                <div className="text-5xl sm:text-6xl md:text-7xl mb-3 sm:mb-4 text-white group-hover:scale-110 transition-all duration-500 animate-bounce">
+                  <i className="fab fa-whatsapp"></i>
+                </div>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-thin mb-2 sm:mb-3 text-white">
+                  WhatsApp
+                </h3>
+                <p className="text-white/90 font-thin text-xs sm:text-sm mb-3">
+                  Instant messaging
+                </p>
+                <div className="inline-block bg-white hover:bg-white/90 text-green-600 px-5 py-2 rounded-full font-thin text-xs sm:text-sm transition-all duration-300 hover:shadow-lg group-hover:scale-105 transform">
+                  Chat Now <i className="fas fa-arrow-right ml-1"></i>
+                </div>
               </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl font-thin mb-2 sm:mb-3 text-white">
-                WhatsApp
-              </h3>
-              <p className="text-white text-sm sm:text-base md:text-lg font-thin group-hover:underline">
-                Chat Now
-              </p>
             </a>
 
-            {/* Address */}
-            <div
-              className="bg-linear-to-br from-primary to-secondary rounded-2xl p-6 sm:p-7 md:p-8 text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group border border-primary/20 animate-scale-in"
+            {/* Address Card - White Background */}
+            <a
+              href="https://maps.google.com/?q=70+Nosiru+Baruwa+Close,+Ipaja,+Lagos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-white rounded-2xl p-5 sm:p-6 md:p-7 text-center hover:shadow-lg transition-all duration-500 animate-scale-in transform hover:-translate-y-1 cursor-pointer"
               style={{ animationDelay: "200ms" }}
             >
-              <div className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 text-white group-hover:scale-110 transition-transform duration-300">
-                <i className="fas fa-map-marker-alt"></i>
+              <div className="relative">
+                <div className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 text-secondary group-hover:scale-110 transition-all duration-500">
+                  <i className="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-thin mb-2 sm:mb-3 text-black">
+                  Visit Us
+                </h3>
+                <div className="bg-slate-100 rounded-lg p-3 group-hover:bg-secondary/10 transition-colors duration-300">
+                  <p className="text-black/80 font-thin leading-relaxed text-xs sm:text-sm group-hover:text-secondary transition-colors duration-300">
+                    70 Nosiru Baruwa Close
+                    <br />
+                    Ipaja, Lagos
+                  </p>
+                </div>
+                <p className="text-black/60 font-thin text-xs mt-3">
+                  Click to view on Google Maps
+                </p>
               </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl font-thin mb-2 sm:mb-3 text-white">
-                Visit Us
-              </h3>
-              <p className="text-white text-sm sm:text-base md:text-lg font-thin leading-relaxed">
-                70 Nosiru Baruwa Close
-                <br />
-                Ipaja, Lagos
-              </p>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -194,6 +217,26 @@ Phone: ${checkoutData.phone}
           © 2026 Olambola Frozen Food. All rights reserved.
         </p>
       </footer>
+
+      {/* Sticky WhatsApp Button */}
+      <a
+        href="https://wa.me/2348180129670"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-28 right-5 bg-gradient-to-br from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-full p-3 shadow-lg hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300 transform hover:scale-110 z-40 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 animate-pulse"
+        title="Chat on WhatsApp"
+      >
+        <i className="fab fa-whatsapp text-xl sm:text-2xl"></i>
+      </a>
+
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-6 right-5 bg-white hover:bg-slate-100 text-black rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 z-40 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 group border border-slate-300 hover:border-black/30"
+        title="Back to Top"
+      >
+        <i className="fas fa-arrow-up text-lg sm:text-xl text-black group-hover:animate-bounce"></i>
+      </button>
     </>
   );
 };

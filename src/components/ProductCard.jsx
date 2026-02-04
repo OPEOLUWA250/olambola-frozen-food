@@ -8,8 +8,8 @@ export const ProductCard = ({ product, onAddToCart }) => {
     setIsAdded(true);
     setShowAnimation(true);
     onAddToCart(prod);
-    setTimeout(() => setIsAdded(false), 2000);
-    setTimeout(() => setShowAnimation(false), 1500);
+    setTimeout(() => setIsAdded(false), 400);
+    setTimeout(() => setShowAnimation(false), 400);
   };
 
   return (
@@ -23,8 +23,8 @@ export const ProductCard = ({ product, onAddToCart }) => {
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
         ) : (
-          <div className="text-5xl sm:text-6xl md:text-7xl bg-linear-to-br from-slate-50 to-blue-50 w-full h-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            📦
+          <div className="text-5xl sm:text-6xl md:text-7xl bg-linear-to-br from-slate-50 to-blue-50 w-full h-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 text-slate-400">
+            <i className="fas fa-box"></i>
           </div>
         )}
         <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-linear-to-r from-primary to-secondary text-white text-xs font-thin px-2.5 sm:px-3 py-1 rounded-full shadow-lg group-hover:shadow-xl transition-shadow duration-300">
@@ -32,7 +32,9 @@ export const ProductCard = ({ product, onAddToCart }) => {
         </div>
         {showAnimation && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/10 animate-pulse rounded-t-xl sm:rounded-t-2xl">
-            <div className="text-5xl sm:text-6xl animate-bounce-slow">✅</div>
+            <div className="text-5xl sm:text-6xl animate-bounce-slow text-green-600">
+              <i className="fas fa-check"></i>
+            </div>
           </div>
         )}
       </div>
@@ -47,13 +49,14 @@ export const ProductCard = ({ product, onAddToCart }) => {
         {(product.kg || product.size) && (
           <div className="flex gap-1.5 sm:gap-2 mb-3 text-xs flex-wrap">
             {product.kg && (
-              <span className="bg-linear-to-r from-blue-100 to-blue-50 text-black px-2 py-0.5 sm:py-1 rounded-full font-thin border border-blue-200 hover:border-blue-300 transition-colors duration-200 text-xs">
-                ⚖️ {product.kg}kg
+              <span className="bg-linear-to-r from-blue-100 to-blue-50 text-black px-2 py-0.5 sm:py-1 rounded-full font-thin border border-blue-200 hover:border-blue-300 transition-colors duration-200 text-xs flex items-center gap-1">
+                <i className="fas fa-weight-scale text-blue-600"></i>{" "}
+                {product.kg}kg
               </span>
             )}
             {product.size && (
-              <span className="bg-linear-to-r from-slate-100 to-slate-50 text-black px-2 py-0.5 sm:py-1 rounded-full font-thin border border-slate-200 hover:border-slate-300 transition-colors duration-200 text-xs">
-                📏 {product.size}
+              <span className="bg-linear-to-r from-slate-100 to-slate-50 text-black px-2 py-0.5 sm:py-1 rounded-full font-thin border border-slate-200 hover:border-slate-300 transition-colors duration-200 text-xs flex items-center gap-1">
+                <i className="fas fa-ruler text-slate-600"></i> {product.size}
               </span>
             )}
           </div>
@@ -69,13 +72,23 @@ export const ProductCard = ({ product, onAddToCart }) => {
           </span>
           <button
             onClick={() => handleAddToCart(product)}
-            className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg font-thin transition-all transform hover:scale-110 whitespace-nowrap shadow-md duration-300 text-xs sm:text-sm md:text-base ${
+            className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg font-thin transition-all transform hover:scale-110 whitespace-nowrap shadow-md duration-300 text-xs sm:text-sm md:text-base flex items-center justify-center gap-1 ${
               isAdded
                 ? "bg-green-500 text-white shadow-lg scale-100"
                 : "bg-linear-to-r from-secondary to-primary text-black hover:shadow-xl hover:from-primary hover:to-secondary"
             }`}
           >
-            {isAdded ? "✅ Added!" : "🛒 Add"}
+            {isAdded ? (
+              <>
+                <i className="fas fa-check"></i>
+                Added!
+              </>
+            ) : (
+              <>
+                <i className="fas fa-shopping-cart"></i>
+                Add
+              </>
+            )}
           </button>
         </div>
       </div>

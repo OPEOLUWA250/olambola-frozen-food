@@ -49,7 +49,7 @@ export const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary to-secondary flex items-center justify-center px-4">
+    <div className="min-h-screen bg-linear-to-br from-primary to-secondary flex items-center justify-center px-4">
       <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="text-4xl mb-2">🐟</h1>
@@ -95,7 +95,7 @@ export const AdminLogin = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-gradient-to-r from-primary to-secondary hover:from-blue-800 hover:to-blue-600 text-black font-thin py-3 rounded-xl transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+            className="w-full bg-linear-to-r from-primary to-secondary hover:from-blue-800 hover:to-blue-600 text-black font-thin py-3 rounded-xl transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
           >
             {isLoading ? "Logging in..." : "Login"}
           </button>
@@ -108,3 +108,4 @@ export const AdminLogin = () => {
     </div>
   );
 };
+

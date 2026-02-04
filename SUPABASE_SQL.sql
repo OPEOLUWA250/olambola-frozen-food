@@ -44,7 +44,29 @@ CREATE POLICY "Allow all" ON orders
   USING (true)
   WITH CHECK (true);
 
--- Table 3: ADMIN_USERS (Optional - for future use)
+-- Table 3: ADMINS (for admin management)
+CREATE TABLE IF NOT EXISTS admins (
+  id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  role VARCHAR(50) NOT NULL DEFAULT 'admin',
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create index for faster lookups
+CREATE INDEX IF NOT EXISTS idx_admins_email ON admins(email);
+
+-- Enable RLS for admins
+ALTER TABLE admins ENABLE ROW LEVEL SECURITY;
+
+-- Create policy for admins - Allow all for development
+CREATE POLICY "Allow all" ON admins
+  FOR ALL
+  USING (true)
+  WITH CHECK (true);
+
+-- Table 4: ADMIN_USERS (Optional - for future use)
 CREATE TABLE IF NOT EXISTS admin_users (
   id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   email TEXT UNIQUE NOT NULL,
@@ -68,6 +90,11 @@ INSERT INTO products (name, price, icon, category, description) VALUES
 ('Frozen Fish', 2500, '🐟', 'SEAFOOD', 'Wide variety of frozen fish including mackerel, croaker, tilapia, and more. Ocean fresh quality.'),
 ('Prawns & Shrimp', 6000, '🦐', 'SEAFOOD', 'Premium frozen prawns and shrimp. Perfect for soups, stir-fries, and special dishes.'),
 ('Mixed Vegetables', 1800, '🥦', 'VEGETABLES', 'Assorted frozen vegetables including carrots, peas, green beans, and mixed veggies.');
+
+-- SAMPLE ADMIN DATA (for testing)
+-- Default: email: admin@example.com, password: admin123 (base64 encoded)
+INSERT INTO admins (email, password_hash, role) VALUES
+('admin@example.com', 'YWRtaW4xMjM=', 'main_admin');
 
 -- ENABLE REALTIME
 -- Go to Supabase Dashboard:

@@ -38,3 +38,4 @@ export const initializeDatabase = async () => {
     console.error("Database initialization error:", err);
   }
 };
+
