@@ -1,60 +1,31 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import { AdminProvider } from "./context/AdminContext";
-import { Shop } from "./pages/Shop";
-import { AdminLogin } from "./pages/AdminLogin";
-import { MainAdmin } from "./pages/MainAdmin";
-import { useAdmin } from "./context/AdminContext";
-import "./index.css";
-
-function ProtectedRoute({ children }) {
-  const { admin, loading } = useAdmin();
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50">
-        <p className="text-black font-thin">Loading...</p>
-      </div>
-    );
-  }
-
-  if (!admin) {
-    return <Navigate to="/admin-login" />;
-  }
-
-  return children;
-}
-
-function AppRoutes() {
-  return (
-    <Routes>
-      <Route path="/" element={<Shop />} />
-      <Route path="/admin-login" element={<AdminLogin />} />
-      <Route
-        path="/admin"
-        element={
-          <ProtectedRoute>
-            <MainAdmin />
-          </ProtectedRoute>
-        }
-      />
-    </Routes>
-  );
-}
+import { useState } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import FloatingActions from "./components/FloatingActions";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 function App() {
+  const [currentPage, setCurrentPage] = useState("home");
+
   return (
-    <Router>
-      <AdminProvider>
-        <AppRoutes />
-      </AdminProvider>
-    </Router>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col">
+      <Header onNavigate={setCurrentPage} />
+
+      <FloatingActions />
+
+      <main className="flex-1">
+        {currentPage === "home" && <Home />}
+
+        {currentPage === "about" && <About />}
+
+        {currentPage === "contact" && <Contact />}
+      </main>
+
+      <Footer onNavigate={setCurrentPage} />
+    </div>
   );
 }
 
 export default App;
-
