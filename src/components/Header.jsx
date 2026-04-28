@@ -116,11 +116,11 @@ export default function Header({ onNavigate }) {
       {mobileMenuOpen && (
         <>
           {/* Menu Backdrop */}
-          <div 
+          <div
             className="md:hidden fixed inset-0 bg-black/40 z-40"
             onClick={() => setMobileMenuOpen(false)}
           />
-          
+
           {/* Menu Content */}
           <div className="md:hidden fixed left-0 right-0 top-0 mt-24 z-50 bg-gradient-to-b from-[#1E40AF]/95 via-[#1E40AF]/90 to-[#1E40AF]/85 pt-8 px-6 pb-8 max-h-[calc(100vh-96px)] overflow-y-auto">
             <nav className="flex flex-col gap-6">
