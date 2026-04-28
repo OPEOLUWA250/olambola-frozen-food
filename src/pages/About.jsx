@@ -1,6 +1,36 @@
+import { useSEO } from "../hooks/useSEO";
+import SEOHelmet from "../components/SEOHelmet";
+
 export default function About() {
+  const seoConfig = {
+    title: "About Us - Olambola Foods Story",
+    description: "Learn about Olambola Foods, our mission for premium quality fish and seafood, sustainable fishing practices, and our commitment to excellence since day one.",
+    keywords: "about olambola, sustainable fishing, premium seafood company, fish sourcing, ocean conservation, quality assurance",
+    url: "/about",
+    type: "article",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Olambola Foods",
+      "description": "Premium quality fish and seafood supplier committed to sustainability",
+      "url": "https://olambola.com/about",
+      "foundingDate": "2020",
+      "foundingLocation": "USA",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "knowsAbout": ["Sustainable Fishing", "Premium Seafood", "Fish Supply"],
+      "sameAs": ["https://www.facebook.com/olambola", "https://www.instagram.com/olambola"]
+    }
+  };
+
+  useSEO(seoConfig);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-32 pb-16">
+    <>
+      <SEOHelmet config={seoConfig} />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-32 pb-16">
       {/* Hero Section */}
       <section className="px-4 py-16 text-center mb-20">
         <h1 className="text-5xl md:text-6xl font-bold text-[#1E40AF] mb-4">
@@ -163,5 +193,6 @@ export default function About() {
         </div>
       </section>
     </div>
+    </>
   );
 }
