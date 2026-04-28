@@ -12,6 +12,19 @@ export default function Header({ onNavigate }) {
   };
 
   useEffect(() => {
+    // Prevent body scroll when mobile menu is open
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -101,52 +114,63 @@ export default function Header({ onNavigate }) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed top-24 left-0 right-0 bottom-0 bg-gradient-to-b from-[#1E40AF]/95 via-[#1E40AF]/90 to-[#1E40AF]/85 z-40 pt-8 px-4 backdrop-blur-sm">
-          <nav className="flex flex-col gap-8">
-            {/* Mobile Nav Items */}
-            <ul className="flex flex-col gap-6">
-              <li>
-                <button
-                  onClick={() => handleNavigate("home")}
-                  className="text-white font-bold text-2xl hover:opacity-80 transition-opacity flex items-center gap-3"
-                >
-                  <i className="fas fa-home text-2xl"></i>
-                  Home
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNavigate("about")}
-                  className="text-white font-bold text-2xl hover:opacity-80 transition-opacity flex items-center gap-3"
-                >
-                  <i className="fas fa-info-circle text-2xl"></i>
-                  About Us
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNavigate("contact")}
-                  className="text-white font-bold text-2xl hover:opacity-80 transition-opacity flex items-center gap-3"
-                >
-                  <i className="fas fa-envelope text-2xl"></i>
-                  Contact Us
-                </button>
-              </li>
-            </ul>
+        <>
+          {/* Menu Backdrop */}
+          <div 
+            className="md:hidden fixed inset-0 bg-black/40 z-40"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          
+          {/* Menu Content */}
+          <div className="md:hidden fixed left-0 right-0 top-0 mt-24 z-50 bg-gradient-to-b from-[#1E40AF]/95 via-[#1E40AF]/90 to-[#1E40AF]/85 pt-8 px-6 pb-8 max-h-[calc(100vh-96px)] overflow-y-auto">
+            <nav className="flex flex-col gap-6">
+              {/* Mobile Nav Items Card */}
+              <div className="bg-white rounded-3xl p-8 shadow-2xl">
+                <ul className="flex flex-col gap-0">
+                  <li>
+                    <button
+                      onClick={() => handleNavigate("home")}
+                      className="text-[#1E40AF] font-bold text-base md:text-lg hover:opacity-70 transition-opacity flex items-center gap-4 w-full p-4 rounded-lg hover:bg-blue-50"
+                    >
+                      <i className="fas fa-home text-lg"></i>
+                      <span>Home</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => handleNavigate("about")}
+                      className="text-[#1E40AF] font-bold text-base md:text-lg hover:opacity-70 transition-opacity flex items-center gap-4 w-full p-4 rounded-lg hover:bg-blue-50"
+                    >
+                      <i className="fas fa-info-circle text-lg"></i>
+                      <span>About Us</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => handleNavigate("contact")}
+                      className="text-[#1E40AF] font-bold text-base md:text-lg hover:opacity-70 transition-opacity flex items-center gap-4 w-full p-4 rounded-lg hover:bg-blue-50"
+                    >
+                      <i className="fas fa-envelope text-lg"></i>
+                      <span>Contact Us</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
 
-            {/* Mobile Order Now Button */}
-            <a
-              href="https://wa.me/2349162964829"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="bg-white hover:bg-gray-100 text-[#1E40AF] font-bold px-6 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-center w-full text-lg flex items-center justify-center gap-3"
-            >
-              <i className="fab fa-whatsapp text-2xl"></i>
-              Order Now
-            </a>
-          </nav>
-        </div>
+              {/* Mobile Order Now Button */}
+              <a
+                href="https://wa.me/2349162964829"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="bg-white hover:bg-gray-50 text-[#1E40AF] font-bold px-8 py-4 rounded-2xl transition-all duration-300 shadow-xl text-center w-full text-base flex items-center justify-center gap-3"
+              >
+                <i className="fab fa-whatsapp text-xl"></i>
+                <span>Order Now</span>
+              </a>
+            </nav>
+          </div>
+        </>
       )}
     </header>
   );
