@@ -4,56 +4,56 @@
  * Usage: node scripts/generate-sitemap.js
  */
 
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
-const BASE_URL = 'https://olambolainternational.com';
+const BASE_URL = "https://olambolainternational.com";
 
 // Define all your routes and their metadata
 const pages = [
   {
-    url: '/',
-    title: 'Home',
-    changefreq: 'weekly',
-    priority: '1.0',
-    lastmod: new Date().toISOString().split('T')[0],
+    url: "/",
+    title: "Home",
+    changefreq: "weekly",
+    priority: "1.0",
+    lastmod: new Date().toISOString().split("T")[0],
   },
   {
-    url: '/about',
-    title: 'About',
-    changefreq: 'monthly',
-    priority: '0.8',
-    lastmod: new Date().toISOString().split('T')[0],
+    url: "/about",
+    title: "About",
+    changefreq: "monthly",
+    priority: "0.8",
+    lastmod: new Date().toISOString().split("T")[0],
   },
   {
-    url: '/contact',
-    title: 'Contact',
-    changefreq: 'monthly',
-    priority: '0.7',
-    lastmod: new Date().toISOString().split('T')[0],
+    url: "/contact",
+    title: "Contact",
+    changefreq: "monthly",
+    priority: "0.7",
+    lastmod: new Date().toISOString().split("T")[0],
   },
 ];
 
 // Product pages (add your products dynamically)
 const productPages = [
   {
-    url: '/products/premium-fish',
-    changefreq: 'weekly',
-    priority: '0.8',
+    url: "/products/premium-fish",
+    changefreq: "weekly",
+    priority: "0.8",
   },
   {
-    url: '/products/frozen-seafood',
-    changefreq: 'weekly',
-    priority: '0.8',
+    url: "/products/frozen-seafood",
+    changefreq: "weekly",
+    priority: "0.8",
   },
   {
-    url: '/products/specialty-items',
-    changefreq: 'monthly',
-    priority: '0.7',
+    url: "/products/specialty-items",
+    changefreq: "monthly",
+    priority: "0.7",
   },
 ];
 
-function generateSitemapXML(urlList, fileName = 'sitemap.xml') {
+function generateSitemapXML(urlList, fileName = "sitemap.xml") {
   const sitemapStart = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
@@ -70,14 +70,14 @@ function generateSitemapXML(urlList, fileName = 'sitemap.xml') {
     <priority>${page.priority}</priority>
   </url>`;
     })
-    .join('\n');
+    .join("\n");
 
   const sitemap = `${sitemapStart}\n${urlEntries}\n${sitemapEnd}`;
 
   const outputPath = path.join(
-    import.meta.url.split('/').slice(0, -1).join('/').replace('file:///', ''),
-    '../public',
-    fileName
+    import.meta.url.split("/").slice(0, -1).join("/").replace("file:///", ""),
+    "../public",
+    fileName,
   );
 
   fs.writeFileSync(outputPath, sitemap);
@@ -96,20 +96,22 @@ function generateSitemapIndex() {
 </sitemapindex>`;
 
   const outputPath = path.join(
-    import.meta.url.split('/').slice(0, -1).join('/').replace('file:///', ''),
-    '../public',
-    'sitemap-index.xml'
+    import.meta.url.split("/").slice(0, -1).join("/").replace("file:///", ""),
+    "../public",
+    "sitemap-index.xml",
   );
 
   fs.writeFileSync(outputPath, sitemapIndex);
-  console.log('✓ sitemap-index.xml generated successfully');
+  console.log("✓ sitemap-index.xml generated successfully");
 }
 
 // Generate sitemaps
-console.log('Generating sitemaps...');
-generateSitemapXML(pages, 'sitemap.xml');
-generateSitemapXML(productPages, 'sitemap-products.xml');
+console.log("Generating sitemaps...");
+generateSitemapXML(pages, "sitemap.xml");
+generateSitemapXML(productPages, "sitemap-products.xml");
 generateSitemapIndex();
 
-console.log('\n✓ All sitemaps generated successfully!');
-console.log('Submit to Google Search Console: https://www.google.com/webmasters/tools/');
+console.log("\n✓ All sitemaps generated successfully!");
+console.log(
+  "Submit to Google Search Console: https://www.google.com/webmasters/tools/",
+);

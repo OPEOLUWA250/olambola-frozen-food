@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 /**
  * Custom hook for managing SEO metadata
@@ -13,14 +13,11 @@ import { useEffect } from 'react';
  * @param {Object} config.schema - JSON-LD schema object
  */
 export const useSEO = (config) => {
-  const baseUrl = 'https://olambolainternational.com';
-  
-  const {
-    url = baseUrl,
-    schema = null,
-  } = config;
+  const baseUrl = "https://olambolainternational.com";
 
-  const canonicalUrl = url.startsWith('http') ? url : `${baseUrl}${url}`;
+  const { url = baseUrl, schema = null } = config;
+
+  const canonicalUrl = url.startsWith("http") ? url : `${baseUrl}${url}`;
 
   useEffect(() => {
     // Set canonical URL
@@ -28,8 +25,8 @@ export const useSEO = (config) => {
     if (link) {
       link.href = canonicalUrl;
     } else {
-      link = document.createElement('link');
-      link.rel = 'canonical';
+      link = document.createElement("link");
+      link.rel = "canonical";
       link.href = canonicalUrl;
       document.head.appendChild(link);
     }
@@ -40,8 +37,8 @@ export const useSEO = (config) => {
       if (script) {
         script.remove();
       }
-      script = document.createElement('script');
-      script.type = 'application/ld+json';
+      script = document.createElement("script");
+      script.type = "application/ld+json";
       script.textContent = JSON.stringify(schema);
       document.head.appendChild(script);
     }
