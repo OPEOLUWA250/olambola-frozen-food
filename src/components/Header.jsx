@@ -57,7 +57,7 @@ export default function Header({ onNavigate }) {
             onClick={() => handleNavigate("home")}
             className="text-2xl font-bold text-white hover:opacity-80 transition-opacity"
           >
-            OlambolaFoods
+            Olambola Foods
           </button>
         </div>
 
@@ -143,6 +143,15 @@ export default function Header({ onNavigate }) {
                     >
                       <i className="fas fa-info-circle text-lg"></i>
                       <span>About Us</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => handleNavigate("partner")}
+                      className="text-[#1E40AF] font-bold text-base md:text-lg hover:opacity-70 transition-opacity flex items-center gap-4 w-full p-4 rounded-lg hover:bg-blue-50"
+                    >
+                      <i className="fas fa-handshake text-lg"></i>
+                      <span>Partner With Us</span>
                     </button>
                   </li>
                   <li>

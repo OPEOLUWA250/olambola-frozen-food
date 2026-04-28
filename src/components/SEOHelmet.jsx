@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
-const companyName = "Olambola Foods";
-const baseUrl = "https://olambola.com";
+const companyName = "Olambola International";
+const baseUrl = "https://olambolainternational.com";
 
 /**
  * SEO Meta Tags Component

@@ -13,7 +13,7 @@ export default function About() {
     schema: {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "Olambola Foods",
+      name: "Olambola International",
       description:
         "Premium quality fish and seafood supplier committed to sustainability",
       url: "https://olambola.com/about",
@@ -51,24 +51,24 @@ export default function About() {
         {/* Our Story Section */}
         <section className="px-4 mb-20">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-[#1E40AF] mb-8">
+            <h2 className="text-4xl font-bold text-[#1E40AF] mb-8 text-center">
               Our Story
             </h2>
-            <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-8 shadow-lg">
-              <p className="text-gray-800 text-lg leading-relaxed mb-6">
+            <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-6 md:p-8 shadow-lg">
+              <p className="text-gray-800 text-lg leading-relaxed mb-5 text-left">
                 Olambola Foods was founded on a simple belief: everyone deserves
                 access to premium quality fish and seafood. What started as a
                 passion for connecting people with the finest aquatic products
                 has grown into a trusted brand known for excellence and
                 integrity.
               </p>
-              <p className="text-gray-800 text-lg leading-relaxed mb-6">
+              <p className="text-gray-800 text-lg leading-relaxed mb-5 text-left">
                 We work directly with sustainable fisheries and trusted
                 suppliers around the world to bring you products that are not
                 only delicious but also responsibly sourced. Every catch, every
                 product, every interaction reflects our commitment to quality.
               </p>
-              <p className="text-gray-800 text-lg leading-relaxed">
+              <p className="text-gray-800 text-lg leading-relaxed text-left">
                 Today, Olambola Foods continues to set the standard for premium
                 fish and seafood, serving customers who value quality,
                 sustainability, and exceptional taste.
@@ -84,16 +84,16 @@ export default function About() {
               Our Mission & Values
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {/* Mission */}
-              <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-8 shadow-lg">
-                <div className="flex items-center mb-4">
+              <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-6 md:p-7 shadow-lg">
+                <div className="flex items-center justify-center mb-4">
                   <i className="fas fa-bullseye text-3xl text-[#1E40AF] mr-3"></i>
                   <h3 className="text-2xl font-bold text-[#1E40AF]">
                     Our Mission
                   </h3>
                 </div>
-                <p className="text-gray-800 text-lg leading-relaxed">
+                <p className="text-gray-800 text-lg leading-relaxed text-left">
                   To provide the highest quality fresh and frozen fish and
                   seafood products while championing sustainable fishing
                   practices and building lasting relationships with our
@@ -102,15 +102,15 @@ export default function About() {
               </div>
 
               {/* Values */}
-              <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-8 shadow-lg">
-                <div className="flex items-center mb-4">
+              <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-6 md:p-7 shadow-lg">
+                <div className="flex items-center justify-center md:justify-start mb-4">
                   <i className="fas fa-heart text-3xl text-[#1E40AF] mr-3"></i>
                   <h3 className="text-2xl font-bold text-[#1E40AF]">
                     Our Values
                   </h3>
                 </div>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
                     <i className="fas fa-check text-[#1E40AF] mr-3 mt-1"></i>
                     <div>
                       <p className="font-semibold text-gray-900">
@@ -121,7 +121,7 @@ export default function About() {
                       </p>
                     </div>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start gap-3">
                     <i className="fas fa-check text-[#1E40AF] mr-3 mt-1"></i>
                     <div>
                       <p className="font-semibold text-gray-900">
@@ -130,7 +130,7 @@ export default function About() {
                       <p className="text-gray-700">Protecting our oceans</p>
                     </div>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start gap-3">
                     <i className="fas fa-check text-[#1E40AF] mr-3 mt-1"></i>
                     <div>
                       <p className="font-semibold text-gray-900">Integrity</p>
@@ -139,7 +139,7 @@ export default function About() {
                       </p>
                     </div>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start gap-3">
                     <i className="fas fa-check text-[#1E40AF] mr-3 mt-1"></i>
                     <div>
                       <p className="font-semibold text-gray-900">Service</p>
@@ -161,9 +161,9 @@ export default function About() {
               Why We Stand Out
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               {/* Global Reach */}
-              <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-8 shadow-lg hover:shadow-xl hover:bg-white/50 transition-all duration-300">
+              <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-6 md:p-7 shadow-lg hover:shadow-xl hover:bg-white/50 transition-all duration-300">
                 <div className="text-5xl text-[#1E40AF] mb-4">
                   <i className="fas fa-globe"></i>
                 </div>
@@ -177,7 +177,7 @@ export default function About() {
               </div>
 
               {/* Expert Knowledge */}
-              <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-8 shadow-lg hover:shadow-xl hover:bg-white/50 transition-all duration-300">
+              <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-6 md:p-7 shadow-lg hover:shadow-xl hover:bg-white/50 transition-all duration-300">
                 <div className="text-5xl text-[#1E40AF] mb-4">
                   <i className="fas fa-brain"></i>
                 </div>
@@ -191,7 +191,7 @@ export default function About() {
               </div>
 
               {/* Ocean Health */}
-              <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-8 shadow-lg hover:shadow-xl hover:bg-white/50 transition-all duration-300">
+              <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-6 md:p-7 shadow-lg hover:shadow-xl hover:bg-white/50 transition-all duration-300">
                 <div className="text-5xl text-[#1E40AF] mb-4">
                   <i className="fas fa-leaf"></i>
                 </div>
@@ -202,6 +202,77 @@ export default function About() {
                   We actively support sustainable fishing practices and ocean
                   conservation initiatives.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Meet Our CEO Section */}
+        <section className="px-4 mb-20 pt-16">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-[#1E40AF] mb-12 text-center">
+              Meet Our CEO
+            </h2>
+
+            <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl overflow-hidden shadow-lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 p-6 md:p-8 items-center">
+                {/* CEO Image */}
+                <div className="flex items-center justify-center">
+                  <img
+                    src="/kisumeo-gen.jpg"
+                    alt="CEO Portrait"
+                    className="w-full h-auto rounded-2xl shadow-lg object-cover max-h-80 md:max-h-96"
+                  />
+                </div>
+
+                {/* CEO Info */}
+                <div className="flex flex-col justify-center">
+                  <h3 className="text-3xl font-bold text-[#1E40AF] mb-3 text-center">
+                    Chief Executive Officer
+                  </h3>
+                  <p className="text-gray-700 mb-5 leading-relaxed text-left">
+                    With over two decades of experience in sustainable
+                    aquaculture and international seafood trade, our CEO brings
+                    a wealth of knowledge and passion to Olambola Foods. Their
+                    vision has transformed the company into a leading provider
+                    of premium fish and seafood products.
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <i className="fas fa-check text-[#1E40AF] mr-3 mt-1 flex-shrink-0"></i>
+                      <div className="text-left">
+                        <p className="font-semibold text-gray-900">
+                          Industry Pioneer
+                        </p>
+                        <p className="text-gray-700 text-sm">
+                          Leading innovation in sustainable fishing practices
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <i className="fas fa-check text-[#1E40AF] mr-3 mt-1 flex-shrink-0"></i>
+                      <div className="text-left">
+                        <p className="font-semibold text-gray-900">
+                          Global Network
+                        </p>
+                        <p className="text-gray-700 text-sm">
+                          Connected with suppliers and partners worldwide
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <i className="fas fa-check text-[#1E40AF] mr-3 mt-1 flex-shrink-0"></i>
+                      <div className="text-left">
+                        <p className="font-semibold text-gray-900">
+                          Quality Focused
+                        </p>
+                        <p className="text-gray-700 text-sm">
+                          Committed to excellence in every product and service
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

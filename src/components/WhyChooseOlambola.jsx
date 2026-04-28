@@ -25,7 +25,7 @@ export default function WhyChooseOlambola() {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1E40AF] mb-4">
             Why Choose Olambola?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">

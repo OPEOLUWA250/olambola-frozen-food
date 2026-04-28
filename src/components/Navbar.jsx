@@ -2,6 +2,7 @@ export default function Navbar({ onNavigate }) {
   const navItems = [
     { label: "Home", action: "home" },
     { label: "About Us", action: "about" },
+    { label: "Partner With Us", action: "partner" },
     { label: "Contact Us", action: "contact" },
   ];
 

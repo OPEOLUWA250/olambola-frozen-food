@@ -6,7 +6,7 @@
 export const SEOConfig = {
   // Site-wide information
   site: {
-    name: "Olambola Foods",
+    name: "Olambola International",
     domain: "https://olambolainternational.com",
     description:
       "Premium quality fish and seafood from the world's finest waters",

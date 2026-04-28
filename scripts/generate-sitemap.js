@@ -32,6 +32,13 @@ const pages = [
     priority: "0.7",
     lastmod: new Date().toISOString().split("T")[0],
   },
+  {
+    url: "/partner",
+    title: "Partner With Us",
+    changefreq: "monthly",
+    priority: "0.8",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
 ];
 
 // Product pages (add your products dynamically)

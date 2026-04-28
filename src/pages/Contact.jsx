@@ -16,7 +16,7 @@ export default function Contact() {
     schema: {
       "@context": "https://schema.org",
       "@type": "ContactPage",
-      name: "Contact Olambola Foods",
+      name: "Contact Olambola International",
       url: "https://olambola.com/contact",
       description:
         "Get in touch with Olambola Foods for inquiries about our premium fish and seafood products",
