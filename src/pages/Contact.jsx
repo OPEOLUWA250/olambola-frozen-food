@@ -8,21 +8,28 @@ export default function Contact() {
   const seoConfig = {
     title: "Contact Us - Get in Touch",
     description:
-      "Contact Olambola Foods with questions about our premium fish and seafood products. We're here to help with fast, friendly customer service.",
+      "Contact Olambola Foods for premium fish and seafood inquiries. Fast customer support, product questions, and orders. Reach us via WhatsApp or contact form.",
     keywords:
-      "contact olambola, fish delivery support, seafood customer service, order help, product inquiries",
+      "contact olambola, fish delivery support, seafood customer service, order help, product inquiries, olambola contact",
     url: "/contact",
     type: "ContactPage",
     schema: {
       "@context": "https://schema.org",
       "@type": "ContactPage",
       name: "Contact Olambola International",
-      url: "https://olambola.com/contact",
+      url: "https://olambolainternational.com/contact",
       description:
         "Get in touch with Olambola Foods for inquiries about our premium fish and seafood products",
-      potentialAction: {
-        "@type": "CommunicateAction",
-        target: "https://olambola.com/contact",
+      mainEntity: {
+        "@type": "Organization",
+        name: "Olambola International",
+        contact: {
+          "@type": "ContactPoint",
+          contactType: "Customer Support",
+          telephone: "+234-916-296-4829",
+          url: "https://wa.me/2349162964829",
+          email: "support@olambolainternational.com",
+        },
       },
     },
   };
@@ -35,7 +42,7 @@ export default function Contact() {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-32">
         {/* Hero Section */}
         <section className="px-4 py-12 text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-[#1E40AF] mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#1E40AF] mb-4">
             Get in Touch
           </h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">

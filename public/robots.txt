@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /contact
+Allow: /partner
+
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /private/
+
+# Crawl delay (in seconds)
+Crawl-delay: 1
+
+# Sitemap locations
+Sitemap: https://olambolainternational.com/sitemap.xml
+Sitemap: https://olambolainternational.com/sitemap-products.xml
+Sitemap: https://olambolainternational.com/sitemap-index.xml
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

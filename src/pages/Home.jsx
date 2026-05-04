@@ -9,23 +9,35 @@ export default function Home({ onNavigate }) {
   const seoConfig = {
     title: "Premium Fish & Seafood Delivery",
     description:
-      "Discover premium quality fresh and frozen fish, seafood, and sustainable fishing products from Olambola Foods. Fast delivery, premium quality guaranteed.",
+      "Premium quality fresh and frozen fish, seafood, and sustainable fishing products. Order online with fast delivery. Expert aquaculture training programs available.",
     keywords:
-      "frozen fish, seafood delivery, premium fish, fresh frozen fish, sustainable seafood, buy fish online",
+      "frozen fish delivery, premium seafood, fresh fish online, sustainable fishing, aquaculture training, fish farming",
     url: "/",
     type: "website",
     schema: {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       name: "Olambola International",
-      description: "Premium quality fish and seafood supplier",
-      url: "https://olambola.com",
-      image: "https://olambola.com/logo.png",
+      image: "https://olambolainternational.com/olambola-logo.png",
+      description:
+        "Premium quality fish and seafood supplier with training programs",
+      url: "https://olambolainternational.com",
       priceRange: "$$",
       address: {
         "@type": "PostalAddress",
         addressCountry: "US",
       },
+      contact: {
+        "@type": "ContactPoint",
+        contactType: "Customer Support",
+        telephone: "+234-916-296-4829",
+        url: "https://wa.me/2349162964829",
+      },
+      sameAs: [
+        "https://www.facebook.com/olambola",
+        "https://www.instagram.com/olambola",
+        "https://www.tiktok.com/@olambola",
+      ],
     },
   };
 
@@ -45,7 +57,7 @@ export default function Home({ onNavigate }) {
               {/* Story Content */}
               <div className="text-center md:text-left">
                 <div className="mb-6">
-                  <h2 className="text-4xl md:text-5xl font-bold text-[#1E40AF] mb-4">
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#1E40AF] mb-4">
                     Our Story
                   </h2>
                   <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 rounded-full mx-auto md:mx-0"></div>
@@ -94,7 +106,7 @@ export default function Home({ onNavigate }) {
         <section className="px-4 py-20 bg-white/30">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-[#1E40AF] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1E40AF] mb-4">
                 Start Your Fish Farming Journey
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto mb-6 rounded-full"></div>

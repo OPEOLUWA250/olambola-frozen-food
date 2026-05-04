@@ -3,36 +3,55 @@ import SEOHelmet from "../components/SEOHelmet";
 
 export default function PartnerWithUs({ onNavigate }) {
   const seoConfig = {
-    title: "Partner With Us - Fish Farming Training",
+    title: "Partner With Us - Fish Farming Training Programs",
     description:
-      "Learn how to start your own fish farm. Olambola International offers personalized training programs from video courses to one-on-one mentorship and in-person farm consultations.",
+      "Start your fish farm with Olambola's expert training: video courses ($299), mentorship ($1,500), and farm consultations. Proven aquaculture programs for success.",
     keywords:
-      "fish farming training, aquaculture training, fish farm startup, farm consultation, mentorship program",
+      "fish farming training, aquaculture training, fish farm startup, farm consultation, mentorship program, fish farming course, learn fish farming",
     url: "/partner",
     type: "website",
     schema: {
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
       name: "Olambola International",
-      description: "Fish farming and aquaculture training programs",
+      description:
+        "Fish farming and aquaculture training programs for beginners and advanced farmers",
       url: "https://olambolainternational.com/partner",
+      image: "https://olambolainternational.com/olambola-logo.png",
       offers: [
         {
-          "@type": "EducationalOffer",
+          "@type": "Course",
           name: "Video Training Course",
           description:
-            "Comprehensive online video training for starting a fish farm",
+            "Comprehensive online video training for starting a fish farm. Self-paced, 8-12 weeks.",
+          price: "299",
+          priceCurrency: "USD",
+          provider: {
+            "@type": "Organization",
+            name: "Olambola International",
+          },
         },
         {
-          "@type": "EducationalOffer",
+          "@type": "Course",
           name: "One-on-One Mentorship",
           description:
-            "Personalized mentorship from experienced aquaculture experts",
+            "Personalized mentorship from experienced aquaculture experts. 3 months, flexible schedule.",
+          price: "1500",
+          priceCurrency: "USD",
+          provider: {
+            "@type": "Organization",
+            name: "Olambola International",
+          },
         },
         {
-          "@type": "EducationalOffer",
+          "@type": "Service",
           name: "Farm Site Visit & Consultation",
-          description: "On-site consultation and assessment by Olambola team",
+          description:
+            "On-site consultation and assessment by Olambola team. 2-3 days on-site.",
+          provider: {
+            "@type": "Organization",
+            name: "Olambola International",
+          },
         },
       ],
     },
@@ -112,7 +131,7 @@ export default function PartnerWithUs({ onNavigate }) {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-32 pb-16">
         {/* Hero Section */}
         <section className="px-4 py-16 text-center mb-20">
-          <h1 className="text-5xl md:text-6xl font-bold text-[#1E40AF] mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#1E40AF] mb-4">
             Partner With Us
           </h1>
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -29,6 +29,38 @@ export default function FAQ() {
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  // Add FAQPage schema markup
+  useEffect(() => {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    };
+
+    let script = document.querySelector(
+      'script[type="application/ld+json"][data-faq="true"]',
+    );
+    if (script) {
+      script.remove();
+    }
+    script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.setAttribute("data-faq", "true");
+    script.textContent = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, [faqs]);
 
   return (
     <div className="max-w-3xl mx-auto">

@@ -5,9 +5,9 @@ export default function About() {
   const seoConfig = {
     title: "About Us - Olambola Foods Story",
     description:
-      "Learn about Olambola Foods, our mission for premium quality fish and seafood, sustainable fishing practices, and our commitment to excellence since day one.",
+      "Learn about Olambola Foods: premium quality fish and seafood supplier since 2020. Sustainable fishing practices, expert team, and commitment to excellence.",
     keywords:
-      "about olambola, sustainable fishing, premium seafood company, fish sourcing, ocean conservation, quality assurance",
+      "about olambola, sustainable fishing, premium seafood supplier, fish sourcing, ocean conservation, quality assurance, aquaculture",
     url: "/about",
     type: "article",
     schema: {
@@ -15,19 +15,30 @@ export default function About() {
       "@type": "Organization",
       name: "Olambola International",
       description:
-        "Premium quality fish and seafood supplier committed to sustainability",
-      url: "https://olambola.com/about",
+        "Premium quality fish and seafood supplier committed to sustainability and excellence",
+      url: "https://olambolainternational.com/about",
       foundingDate: "2020",
       foundingLocation: "USA",
+      image: "https://olambolainternational.com/olambola-logo.png",
       areaServed: {
         "@type": "Country",
         name: "United States",
       },
-      knowsAbout: ["Sustainable Fishing", "Premium Seafood", "Fish Supply"],
+      knowsAbout: [
+        "Sustainable Fishing",
+        "Premium Seafood",
+        "Fish Supply",
+        "Aquaculture",
+      ],
       sameAs: [
         "https://www.facebook.com/olambola",
         "https://www.instagram.com/olambola",
       ],
+      contact: {
+        "@type": "ContactPoint",
+        contactType: "Customer Support",
+        telephone: "+234-916-296-4829",
+      },
     },
   };
 
@@ -39,7 +50,7 @@ export default function About() {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-32 pb-16">
         {/* Hero Section */}
         <section className="px-4 py-16 text-center mb-20">
-          <h1 className="text-5xl md:text-6xl font-bold text-[#1E40AF] mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#1E40AF] mb-4">
             About Olambola Foods
           </h1>
           <p className="text-gray-600 text-xl max-w-3xl mx-auto">
@@ -52,7 +63,7 @@ export default function About() {
         <section className="px-4 mb-20">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-4xl font-bold text-[#1E40AF] mb-4">
+              <h2 className="text-3xl font-bold text-[#1E40AF] mb-4">
                 Our Story
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto rounded-full"></div>
@@ -84,7 +95,7 @@ export default function About() {
         <section className="px-4 mb-20">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-[#1E40AF] mb-4">
+              <h2 className="text-3xl font-bold text-[#1E40AF] mb-4">
                 Our Mission & Values
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto rounded-full"></div>
@@ -109,7 +120,7 @@ export default function About() {
 
               {/* Values */}
               <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-6 md:p-7 shadow-lg">
-                <div className="flex items-center justify-center md:justify-start mb-4">
+                <div className="flex items-center justify-start mb-4">
                   <i className="fas fa-heart text-3xl text-[#1E40AF] mr-3"></i>
                   <h3 className="text-2xl font-bold text-[#1E40AF]">
                     Our Values
@@ -164,7 +175,7 @@ export default function About() {
         <section className="px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-[#1E40AF] mb-4">
+              <h2 className="text-3xl font-bold text-[#1E40AF] mb-4">
                 Why We Stand Out
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto rounded-full"></div>
