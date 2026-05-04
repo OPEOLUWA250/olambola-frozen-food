@@ -1,6 +1,8 @@
 import { useSEO } from "../hooks/useSEO";
 import SEOHelmet from "../components/SEOHelmet";
+import HeroSection from "../components/HeroSection";
 import Carousel from "../components/Carousel";
+import OurServices from "../components/OurServices";
 import WhyChooseOlambola from "../components/WhyChooseOlambola";
 
 export default function Home({ onNavigate }) {
@@ -33,8 +35,8 @@ export default function Home({ onNavigate }) {
     <>
       <SEOHelmet config={seoConfig} />
       <div className="w-full">
+        <HeroSection />
         <Carousel />
-        <WhyChooseOlambola />
 
         {/* Our Story Preview Section */}
         <section className="px-4 py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
@@ -42,9 +44,12 @@ export default function Home({ onNavigate }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               {/* Story Content */}
               <div className="text-center md:text-left">
-                <h2 className="text-4xl md:text-5xl font-bold text-[#1E40AF] mb-6">
-                  Our Story
-                </h2>
+                <div className="mb-6">
+                  <h2 className="text-4xl md:text-5xl font-bold text-[#1E40AF] mb-4">
+                    Our Story
+                  </h2>
+                  <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 rounded-full mx-auto md:mx-0"></div>
+                </div>
                 <p className="text-gray-800 text-lg leading-relaxed mb-6 text-left">
                   Olambola Foods was founded on a simple belief: everyone
                   deserves access to premium quality fish and seafood. What
@@ -67,28 +72,37 @@ export default function Home({ onNavigate }) {
                 </div>
               </div>
 
-              {/* Image Placeholder */}
+              {/* Story Image */}
               <div className="flex items-center justify-center">
-                <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-8 shadow-lg w-full">
-                  <div className="bg-gradient-to-br from-[#1E40AF]/20 to-[#1E40AF]/10 rounded-2xl aspect-square flex items-center justify-center">
-                    <i className="fas fa-fish text-6xl text-[#1E40AF]/40"></i>
-                  </div>
+                <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-[#1E40AF]/20 hover:shadow-3xl transition-all duration-300">
+                  <img
+                    src="/hero-images/hero-3.jpeg"
+                    alt="Our Story - Olambola Foods"
+                    className="w-full h-full object-cover aspect-square"
+                  />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        <OurServices />
+
+        <WhyChooseOlambola />
+
         {/* Training Programs Preview Section */}
         <section className="px-4 py-20 bg-white/30">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1E40AF] mb-4 text-center">
-              Start Your Fish Farming Journey
-            </h2>
-            <p className="text-gray-600 text-lg text-center mb-12 max-w-3xl mx-auto">
-              Learn from industry experts with proven training programs designed
-              to help you succeed in aquaculture.
-            </p>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#1E40AF] mb-4">
+                Start Your Fish Farming Journey
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto mb-6 rounded-full"></div>
+              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+                Learn from industry experts with proven training programs designed
+                to help you succeed in aquaculture.
+              </p>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {/* Program 1 */}

@@ -2,12 +2,17 @@ import { useState, useEffect } from "react";
 
 export default function ImageCarousel() {
   const images = [
-    "/kisumeo-hero.jpg",
-    "/kisumeo-front-hero.jpeg",
-    "/kisumeo-gen.jpg",
-    "/hero-img.png",
-    "/Franchise.png",
-    "/kisumeo-gen-mobile.jpg",
+    "/hero-images/hero-1.jpeg",
+    "/hero-images/hero-2.jpeg",
+    "/hero-images/hero-3.jpeg",
+    "/hero-images/hero-4.jpeg",
+    "/hero-images/hero-5.jpeg",
+    "/hero-images/hero-6.jpeg",
+    "/hero-images/hero-7.jpeg",
+    "/hero-images/hero-8.jpeg",
+    "/hero-images/hero-9.jpeg",
+    "/hero-images/hero-10.jpeg",
+    "/hero-images/hero-11.jpeg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

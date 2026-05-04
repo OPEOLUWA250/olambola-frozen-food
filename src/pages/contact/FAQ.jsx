@@ -32,9 +32,12 @@ export default function FAQ() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <h2 className="text-4xl font-bold text-[#1E40AF] mb-12 text-center">
-        Frequently Asked Questions
-      </h2>
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold text-[#1E40AF] mb-4">
+          Frequently Asked Questions
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto rounded-full"></div>
+      </div>
 
       <div className="space-y-4">
         {faqs.map((faq, index) => (

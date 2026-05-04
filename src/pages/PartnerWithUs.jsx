@@ -1,7 +1,7 @@
 import { useSEO } from "../hooks/useSEO";
 import SEOHelmet from "../components/SEOHelmet";
 
-export default function PartnerWithUs() {
+export default function PartnerWithUs({ onNavigate }) {
   const seoConfig = {
     title: "Partner With Us - Fish Farming Training",
     description:
@@ -124,9 +124,12 @@ export default function PartnerWithUs() {
         {/* Why Partner Section */}
         <section className="px-4 mb-20">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-[#1E40AF] mb-12 text-center">
-              Why Partner With Olambola?
-            </h2>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#1E40AF] mb-4">
+                Why Partner With Olambola?
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-8 shadow-lg hover:shadow-xl hover:bg-white/50 transition-all duration-300">
@@ -174,9 +177,12 @@ export default function PartnerWithUs() {
         {/* Training Programs Section */}
         <section className="px-4 mb-20">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-[#1E40AF] mb-12 text-center">
-              Our Training Programs
-            </h2>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#1E40AF] mb-4">
+                Our Training Programs
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {trainingPrograms.map((program) => (
@@ -317,10 +323,16 @@ export default function PartnerWithUs() {
               needs and goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#1E40AF] hover:bg-gray-100 font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105">
+              <a href="#training-programs" onClick={(e) => {
+                e.preventDefault();
+                const element = document.querySelector('h2');
+                if (element && element.textContent.includes('Our Training Programs')) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }} className="inline-block bg-white text-[#1E40AF] hover:bg-gray-100 font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 cursor-pointer">
                 Explore Programs
-              </button>
-              <button className="bg-white/20 hover:bg-white/30 text-white border-2 border-white font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105">
+              </a>
+              <button onClick={() => onNavigate && onNavigate("contact")} className="inline-block bg-white/20 hover:bg-white/30 text-white border-2 border-white font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 bg-none border-b-2 border-white cursor-pointer">
                 Contact Us
               </button>
             </div>

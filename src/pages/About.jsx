@@ -51,9 +51,12 @@ export default function About() {
         {/* Our Story Section */}
         <section className="px-4 mb-20">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-[#1E40AF] mb-8 text-center">
-              Our Story
-            </h2>
+            <div className="text-center mb-8">
+              <h2 className="text-4xl font-bold text-[#1E40AF] mb-4">
+                Our Story
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
             <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-6 md:p-8 shadow-lg">
               <p className="text-gray-800 text-lg leading-relaxed mb-5 text-left">
                 Olambola Foods was founded on a simple belief: everyone deserves
@@ -80,16 +83,19 @@ export default function About() {
         {/* Mission & Values Section */}
         <section className="px-4 mb-20">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-[#1E40AF] mb-12 text-center">
-              Our Mission & Values
-            </h2>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#1E40AF] mb-4">
+                Our Mission & Values
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {/* Mission */}
               <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl p-6 md:p-7 shadow-lg">
-                <div className="flex items-center justify-center mb-4">
+                <div className="flex items-center justify-start mb-4">
                   <i className="fas fa-bullseye text-3xl text-[#1E40AF] mr-3"></i>
-                  <h3 className="text-2xl font-bold text-[#1E40AF]">
+                  <h3 className="text-2xl font-bold text-[#1E40AF] text-left">
                     Our Mission
                   </h3>
                 </div>
@@ -157,9 +163,12 @@ export default function About() {
         {/* Why We Stand Out Section */}
         <section className="px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-[#1E40AF] mb-12 text-center">
-              Why We Stand Out
-            </h2>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#1E40AF] mb-4">
+                Why We Stand Out
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               {/* Global Reach */}
@@ -210,9 +219,12 @@ export default function About() {
         {/* Meet Our CEO Section */}
         <section className="px-4 mb-20 pt-16">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-[#1E40AF] mb-12 text-center">
-              Meet Our CEO
-            </h2>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#1E40AF] mb-4">
+                Meet Our CEO
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
 
             <div className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-3xl overflow-hidden shadow-lg">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 p-6 md:p-8 items-center">

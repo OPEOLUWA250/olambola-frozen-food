@@ -2,12 +2,17 @@ import { useState, useEffect } from "react";
 
 export default function Carousel() {
   const images = [
-    "/kisumeo-hero.jpg",
-    "/kisumeo-front-hero.jpeg",
-    "/kisumeo-gen.jpg",
-    "/hero-img.png",
-    "/Franchise.png",
-    "/kisumeo-gen-mobile.jpg",
+    "/hero-images/hero-1.jpeg",
+    "/hero-images/hero-2.jpeg",
+    "/hero-images/hero-3.jpeg",
+    "/hero-images/hero-4.jpeg",
+    "/hero-images/hero-5.jpeg",
+    "/hero-images/hero-6.jpeg",
+    "/hero-images/hero-7.jpeg",
+    "/hero-images/hero-8.jpeg",
+    "/hero-images/hero-9.jpeg",
+    "/hero-images/hero-10.jpeg",
+    "/hero-images/hero-11.jpeg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,10 +33,13 @@ export default function Carousel() {
   };
 
   return (
-    <div className="w-full h-screen md:h-screen relative overflow-hidden md:overflow-visible">
-      <div className="relative w-full h-full">
+    <div
+      id="image-carousel"
+      className="w-screen h-[80vh] md:h-screen flex items-center justify-center bg-slate-50 py-8"
+    >
+      <div className="w-[90%] md:w-4/5 h-full relative overflow-visible">
         {/* Carousel Images */}
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full overflow-hidden rounded-3xl shadow-2xl">
           {images.map((image, index) => (
             <img
               key={index}
@@ -47,19 +55,19 @@ export default function Carousel() {
         {/* Previous Button */}
         <button
           onClick={goToPrevious}
-          className="absolute left-2 md:-left-20 top-1/2 -translate-y-1/2 z-20 bg-[#1E40AF]/80 hover:bg-[#1E40AF] text-white p-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+          className="absolute -left-5 md:-left-12 lg:-left-16 top-1/2 -translate-y-1/2 z-30 bg-[#1E40AF]/80 hover:bg-[#1E40AF] text-white p-2 md:p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           aria-label="Previous slide"
         >
-          <i className="fas fa-chevron-left text-lg"></i>
+          <i className="fas fa-chevron-left text-base md:text-lg"></i>
         </button>
 
         {/* Next Button */}
         <button
           onClick={goToNext}
-          className="absolute right-2 md:-right-20 top-1/2 -translate-y-1/2 z-20 bg-[#1E40AF]/80 hover:bg-[#1E40AF] text-white p-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+          className="absolute -right-5 md:-right-12 lg:-right-16 top-1/2 -translate-y-1/2 z-30 bg-[#1E40AF]/80 hover:bg-[#1E40AF] text-white p-2 md:p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           aria-label="Next slide"
         >
-          <i className="fas fa-chevron-right text-lg"></i>
+          <i className="fas fa-chevron-right text-base md:text-lg"></i>
         </button>
       </div>
     </div>

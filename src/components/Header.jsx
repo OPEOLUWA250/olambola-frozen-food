@@ -55,9 +55,13 @@ export default function Header({ onNavigate }) {
         <div className="flex-shrink-0">
           <button
             onClick={() => handleNavigate("home")}
-            className="text-2xl font-bold text-white hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
-            Olambola Foods
+            <img
+              src="/olambola-logo.png"
+              alt="Olambola Foods"
+              className="h-12 w-auto object-contain"
+            />
           </button>
         </div>
 
@@ -90,9 +94,13 @@ export default function Header({ onNavigate }) {
         <div className="flex-shrink-0 pl-8">
           <button
             onClick={() => handleNavigate("home")}
-            className="text-4xl font-bold text-white hover:opacity-80 transition-opacity"
+            className="flex items-center hover:opacity-80 transition-opacity"
           >
-            OlambolaFoods
+            <img
+              src="/olambola-logo.png"
+              alt="Olambola Foods"
+              className="h-16 w-auto object-contain"
+            />
           </button>
         </div>
 
