@@ -50,7 +50,7 @@ export default function Header({ onNavigate }) {
       }`}
     >
       {/* Mobile Header Container with Border */}
-      <div className="md:hidden bg-gradient-to-r from-[#1E40AF]/90 to-[#1E40AF]/80 backdrop-blur-md rounded-2xl px-4 py-4 flex items-center justify-between shadow-lg">
+      <div className="md:hidden bg-gradient-to-r from-[#1E40AF]/90 to-[#1E40AF]/80 backdrop-blur-md rounded-2xl px-2 py-2 flex items-center justify-between shadow-lg">
         {/* Logo - Left */}
         <div className="flex-shrink-0">
           <button
