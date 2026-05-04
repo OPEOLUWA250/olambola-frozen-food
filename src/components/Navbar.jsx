@@ -8,7 +8,7 @@ export default function Navbar({ onNavigate }) {
 
   return (
     <nav>
-      <div className="relative flex items-center justify-center gap-12 px-12 py-5 rounded-3xl backdrop-blur-xl bg-white/20 border-2 border-[#1E40AF]/30 shadow-2xl hover:bg-white/25 transition-all duration-300">
+      <div className="relative flex items-center justify-center gap-12 px-0.5 py-1 md:px-12 md:py-5 rounded-3xl backdrop-blur-xl bg-white/20 border-2 border-[#1E40AF]/30 shadow-2xl hover:bg-white/25 transition-all duration-300">
         {/* Navigation Links */}
         <ul className="flex gap-8 items-center">
           {navItems.map((item, index) => (

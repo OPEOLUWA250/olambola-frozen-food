@@ -58,9 +58,9 @@ export default function Header({ onNavigate }) {
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
             <img
-              src="/olambola-logo.png"
+              src="/olambola-logo-mobile.png"
               alt="Olambola Foods"
-              className="h-12 w-auto object-contain"
+              className="h-14 w-auto object-contain"
             />
           </button>
         </div>
