@@ -323,16 +323,26 @@ export default function PartnerWithUs({ onNavigate }) {
               needs and goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#training-programs" onClick={(e) => {
-                e.preventDefault();
-                const element = document.querySelector('h2');
-                if (element && element.textContent.includes('Our Training Programs')) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }} className="inline-block bg-white text-[#1E40AF] hover:bg-gray-100 font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 cursor-pointer">
+              <a
+                href="#training-programs"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector("h2");
+                  if (
+                    element &&
+                    element.textContent.includes("Our Training Programs")
+                  ) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="inline-block bg-white text-[#1E40AF] hover:bg-gray-100 font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+              >
                 Explore Programs
               </a>
-              <button onClick={() => onNavigate && onNavigate("contact")} className="inline-block bg-white/20 hover:bg-white/30 text-white border-2 border-white font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 bg-none border-b-2 border-white cursor-pointer">
+              <button
+                onClick={() => onNavigate && onNavigate("contact")}
+                className="inline-block bg-white/20 hover:bg-white/30 text-white border-2 border-white font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 bg-none border-b-2 border-white cursor-pointer"
+              >
                 Contact Us
               </button>
             </div>

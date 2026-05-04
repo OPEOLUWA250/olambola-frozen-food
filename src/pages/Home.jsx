@@ -99,8 +99,8 @@ export default function Home({ onNavigate }) {
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto mb-6 rounded-full"></div>
               <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-                Learn from industry experts with proven training programs designed
-                to help you succeed in aquaculture.
+                Learn from industry experts with proven training programs
+                designed to help you succeed in aquaculture.
               </p>
             </div>
 

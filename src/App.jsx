@@ -23,7 +23,9 @@ function App() {
 
         {currentPage === "contact" && <Contact />}
 
-        {currentPage === "partner" && <PartnerWithUs onNavigate={setCurrentPage} />}
+        {currentPage === "partner" && (
+          <PartnerWithUs onNavigate={setCurrentPage} />
+        )}
       </main>
 
       <Footer onNavigate={setCurrentPage} />
