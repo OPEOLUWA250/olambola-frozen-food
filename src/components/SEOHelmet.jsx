@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 const companyName = "Olambola International";
 const baseUrl = "https://olambolainternational.com";
@@ -18,10 +19,37 @@ export const SEOHelmet = ({ config }) => {
     author = companyName,
     publishedDate,
     modifiedDate,
+    schema = null,
   } = config;
 
   const fullTitle = title ? `${title} | ${companyName}` : companyName;
   const canonicalUrl = url.startsWith("http") ? url : `${baseUrl}${url}`;
+
+  // Add dynamic schema markup if provided
+  useEffect(() => {
+    if (schema) {
+      // Remove existing schema script if present
+      let existingScript = document.querySelector(
+        'script[data-schema-helmet="true"]',
+      );
+      if (existingScript) {
+        existingScript.remove();
+      }
+
+      // Create and add new schema script
+      const schemaScript = document.createElement("script");
+      schemaScript.type = "application/ld+json";
+      schemaScript.setAttribute("data-schema-helmet", "true");
+      schemaScript.textContent = JSON.stringify(schema);
+      document.head.appendChild(schemaScript);
+
+      return () => {
+        if (schemaScript.parentNode) {
+          schemaScript.parentNode.removeChild(schemaScript);
+        }
+      };
+    }
+  }, [schema]);
 
   return (
     <Helmet>
@@ -48,6 +76,7 @@ export const SEOHelmet = ({ config }) => {
       <meta property="og:image" content={image} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={fullTitle} />
       <meta property="og:site_name" content={companyName} />
       <meta property="og:locale" content="en_US" />
 
@@ -66,6 +95,9 @@ export const SEOHelmet = ({ config }) => {
       {type === "article" && modifiedDate && (
         <meta property="article:modified_time" content={modifiedDate} />
       )}
+
+      {/* Image Metadata for Rich Snippets */}
+      <meta property="image" content={image} />
 
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />

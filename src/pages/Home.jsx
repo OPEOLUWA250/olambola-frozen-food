@@ -14,6 +14,7 @@ export default function Home({ onNavigate }) {
       "frozen fish delivery, premium seafood, fresh fish online, sustainable fishing, aquaculture training, fish farming",
     url: "/",
     type: "website",
+    image: "https://olambolainternational.com/olambola-logo.png",
     schema: {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
@@ -25,7 +26,11 @@ export default function Home({ onNavigate }) {
       priceRange: "$$",
       address: {
         "@type": "PostalAddress",
-        addressCountry: "US",
+        streetAddress: "70 Nosen Bikesit Ct",
+        addressLocality: "Lipa",
+        addressRegion: "Lagos",
+        postalCode: "102213",
+        addressCountry: "NG",
       },
       contact: {
         "@type": "ContactPoint",

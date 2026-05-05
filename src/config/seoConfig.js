@@ -10,7 +10,7 @@ export const SEOConfig = {
     domain: "https://olambolainternational.com",
     description:
       "Premium quality fish and seafood from the world's finest waters",
-    defaultImage: "https://olambolainternational.com/logo.png",
+    defaultImage: "https://olambolainternational.com/olambola-logo.png",
     language: "en",
     locale: "en_US",
   },
@@ -26,13 +26,14 @@ export const SEOConfig = {
   // Contact Information
   contact: {
     email: "info@olambola.com",
-    phone: "+1-XXXXXXXXXX",
+    phone: "+234-916-296-4829",
+    whatsapp: "+234-916-296-4829",
     address: {
-      streetAddress: "Your Address",
-      addressLocality: "City",
-      addressRegion: "State",
-      postalCode: "ZIP",
-      addressCountry: "US",
+      streetAddress: "70 Nosen Bikesit Ct",
+      addressLocality: "Lipa",
+      addressRegion: "Lagos",
+      postalCode: "102213",
+      addressCountry: "NG",
     },
   },
 
@@ -42,11 +43,12 @@ export const SEOConfig = {
       path: "/",
       title: "Premium Fish & Seafood Delivery",
       description:
-        "Discover premium quality fresh and frozen fish, seafood, and sustainable fishing products from Olambola Foods.",
+        "Discover premium quality fresh and frozen fish, seafood, and sustainable fishing products from Olambola Foods. Expert aquaculture training available.",
       keywords:
-        "frozen fish, seafood delivery, premium fish, fresh frozen fish",
+        "frozen fish, seafood delivery, premium fish, fresh frozen fish, sustainable fishing, fish delivery",
       priority: 1.0,
       changefreq: "weekly",
+      image: "https://olambolainternational.com/olambola-logo.png",
     },
     {
       path: "/about",
@@ -56,6 +58,7 @@ export const SEOConfig = {
       keywords: "about olambola, sustainable fishing, premium seafood company",
       priority: 0.8,
       changefreq: "monthly",
+      image: "https://olambolainternational.com/olambola-logo.png",
     },
     {
       path: "/contact",
@@ -65,6 +68,7 @@ export const SEOConfig = {
       keywords: "contact olambola, fish delivery support, customer service",
       priority: 0.7,
       changefreq: "monthly",
+      image: "https://olambolainternational.com/olambola-logo.png",
     },
   ],
 
@@ -73,19 +77,43 @@ export const SEOConfig = {
     organization: {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "Olambola Foods",
-      url: "https://olambola.com",
-      logo: "https://olambola.com/logo.png",
+      name: "Olambola International",
+      url: "https://olambolainternational.com",
+      logo: "https://olambolainternational.com/olambola-logo.png",
       description: "Premium quality fish and seafood supplier",
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+1-XXXXXXXXXX",
+        telephone: "+234-916-296-4829",
         contactType: "Customer Service",
       },
       sameAs: [
         "https://www.facebook.com/olambola",
         "https://www.twitter.com/olambola",
         "https://www.instagram.com/olambola",
+      ],
+    },
+    localBusiness: {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "Olambola International",
+      image: "https://olambolainternational.com/olambola-logo.png",
+      description:
+        "Premium quality fish and seafood supplier with aquaculture training",
+      url: "https://olambolainternational.com",
+      telephone: "+234-916-296-4829",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "70 Nosen Bikesit Ct",
+        addressLocality: "Lipa",
+        addressRegion: "Lagos",
+        postalCode: "102213",
+        addressCountry: "NG",
+      },
+      priceRange: "$$",
+      sameAs: [
+        "https://www.facebook.com/olambola",
+        "https://www.instagram.com/olambola",
+        "https://www.tiktok.com/@olambola",
       ],
     },
   },
