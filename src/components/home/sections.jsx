@@ -197,12 +197,8 @@ const reasons = [
 
 export function WhyChoose() {
   return (
-    <section className="relative overflow-hidden bg-brand-950 py-24">
-      <div
-        aria-hidden="true"
-        className="absolute -bottom-40 -left-40 size-[32rem] rounded-full bg-brand-700/40 blur-3xl"
-      />
-      <div className="relative mx-auto max-w-6xl px-4 md:px-6">
+    <section className="bg-brand-950 py-24">
+      <div className="mx-auto max-w-6xl px-4 md:px-6">
         <SectionHeading
           tone="dark"
           eyebrow="Why Olambola"

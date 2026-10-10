@@ -95,7 +95,7 @@ export default function Header() {
         }`}
       >
         <div
-          className={`border-b bg-white/95 backdrop-blur-md transition-shadow ${
+          className={`border-b bg-white transition-shadow ${
             scrolled || menuOpen
               ? "border-slate-200 shadow-sm"
               : "border-transparent"

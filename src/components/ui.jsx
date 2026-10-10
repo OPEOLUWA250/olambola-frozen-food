@@ -91,12 +91,8 @@ export function SectionHeading({
 /** Intro banner at the top of inner pages. */
 export function PageHeader({ eyebrow, title, subtitle, children }) {
   return (
-    <section className="relative overflow-hidden bg-brand-950 pt-36 pb-20 text-center md:pt-44 md:pb-24">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(68,137,190,0.35),transparent_60%)]"
-      />
-      <div className="relative mx-auto max-w-3xl px-4">
+    <section className="bg-brand-950 pt-36 pb-20 text-center md:pt-44 md:pb-24">
+      <div className="mx-auto max-w-3xl px-4">
         {eyebrow && (
           <Eyebrow tone="dark" className="mb-5">
             {eyebrow}
@@ -124,12 +120,8 @@ export function PageHeader({ eyebrow, title, subtitle, children }) {
 export function CtaBand({ title, text, children }) {
   return (
     <section className="px-4 py-20">
-      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-brand-700 px-6 py-14 text-center shadow-xl md:px-12">
-        <div
-          aria-hidden="true"
-          className="absolute -top-24 -right-24 size-72 rounded-full bg-brand-500/40 blur-3xl"
-        />
-        <div className="relative">
+      <div className="mx-auto max-w-5xl rounded-3xl bg-brand-700 px-6 py-14 text-center shadow-xl md:px-12">
+        <div>
           <h2 className="text-3xl font-bold text-white md:text-4xl">{title}</h2>
           {text && (
             <p className="mx-auto mt-4 max-w-2xl text-lg text-brand-100">

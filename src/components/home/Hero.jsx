@@ -15,12 +15,7 @@ const highlights = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-brand-50 via-brand-50/60 to-white pt-32 pb-20 md:pt-40 lg:pb-28">
-      <div
-        aria-hidden="true"
-        className="absolute -top-48 -right-40 size-[40rem] rounded-full bg-brand-100/80 blur-3xl"
-      />
-
+    <section className="relative overflow-hidden bg-brand-50 pt-32 pb-20 md:pt-40 lg:pb-28">
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 md:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
         <div className="text-center lg:text-left">
           <Eyebrow>
@@ -91,10 +86,10 @@ export default function Hero() {
             </span>
             <span className="text-left">
               <span className="block font-display text-sm font-bold text-slate-900">
-                Quick-frozen at source
+                Correct ice fish
               </span>
               <span className="block text-sm text-slate-500">
-                Imported from Chile, Japan &amp; more
+                Order by the carton, no wahala
               </span>
             </span>
           </div>
