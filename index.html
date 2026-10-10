@@ -1,224 +1,58 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-NG">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Olambola Foods - Premium quality fish and seafood. Fresh frozen fish, premium seafood products, and sustainable fishing solutions delivered to your table."
-    />
-    <meta
-      name="keywords"
-      content="frozen fish, seafood, premium fish, fresh frozen fish, sustainable fishing, fish delivery, premium seafood"
-    />
-    <meta
-      name="robots"
-      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-    />
-    <meta name="language" content="English" />
-    <meta name="author" content="Olambola Foods" />
-    <meta name="creator" content="Olambola Foods" />
-    <meta name="publisher" content="Olambola Foods" />
-    <meta name="revisit-after" content="7 days" />
-    <meta name="theme-color" content="#1E40AF" />
+    <meta name="theme-color" content="#0A4373" />
 
-    <!-- Open Graph Tags -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Olambola Foods - Premium Fish & Seafood"
-    />
-    <meta
-      property="og:description"
-      content="Premium quality fish and seafood from the world's finest waters. Sustainable, fresh, and delivered to your table."
-    />
-    <meta property="og:url" content="https://olambolainternational.com/" />
-    <meta property="og:site_name" content="Olambola Foods" />
-    <meta property="og:locale" content="en_US" />
-    <meta
-      property="og:image"
-      content="https://olambolainternational.com/olambola-logo.png"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="Olambola Foods - Premium Fish & Seafood"
-    />
+    <!-- Page title, description, canonical and social tags are rendered per page by src/components/Seo.jsx -->
 
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Olambola International - Premium Fish & Seafood"
-    />
-    <meta
-      name="twitter:description"
-      content="Premium quality fish and seafood from the world's finest waters. Sustainable, fresh, and delivered to your table."
-    />
-    <meta
-      name="twitter:image"
-      content="https://olambolainternational.com/olambola-logo.png"
-    />
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://olambolainternational.com/" />
-
-    <!-- Sitemap -->
-    <link
-      rel="sitemap"
-      type="application/xml"
-      href="https://olambolainternational.com/sitemap.xml"
-    />
-
-    <!-- Favicon - Multiple Formats for Full Browser Support -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
-    <meta name="msapplication-TileImage" content="/favicon.png" />
-    <meta name="msapplication-TileColor" content="#1E40AF" />
-
-    <!-- Preconnect to improve performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Web App Manifest -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- PWA Support -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Olambola Foods" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Montserrat:wght@600;700;800&display=swap"
+    />
 
-    <title>Olambola International - Premium Fish & Seafood</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-
-    <!-- JSON-LD Schema for Organization -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Olambola International",
-        "url": "https://olambolainternational.com",
-        "logo": "https://olambolainternational.com/olambola-logo.png",
-        "description": "Premium quality fish and seafood supplier",
-        "sameAs": [
-          "https://www.facebook.com/olambola",
-          "https://www.twitter.com/olambola",
-          "https://www.instagram.com/olambola"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+234-916-296-4829",
-          "contactType": "Customer Service"
-        }
-      }
-    </script>
-
-    <!-- JSON-LD Schema for LocalBusiness -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
+        "@id": "https://olambolainternational.com/#business",
         "name": "Olambola International",
-        "image": "https://olambolainternational.com/olambola-logo.png",
-        "description": "Premium quality fish and seafood supplier with aquaculture training and sustainable fishing solutions",
         "url": "https://olambolainternational.com",
+        "logo": "https://olambolainternational.com/brand/logo.png",
+        "image": "https://olambolainternational.com/og-image.jpg",
+        "description": "Supplier of quality imported frozen fish by the carton across Lagos, with fish-farming training programs.",
         "telephone": "+234-916-296-4829",
+        "email": "info@olambola.com",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "70 Nosen Bikesit Ct",
-          "addressLocality": "Lipa",
+          "addressLocality": "Lagos",
           "addressRegion": "Lagos",
-          "postalCode": "102213",
           "addressCountry": "NG"
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 6.5244,
-          "longitude": 3.3792
-        },
+        "areaServed": { "@type": "City", "name": "Lagos" },
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
           "opens": "09:00",
           "closes": "18:00"
         },
-        "priceRange": "$$",
         "sameAs": [
           "https://www.facebook.com/olambola",
-          "https://www.instagram.com/olambola",
           "https://www.tiktok.com/@olambola"
         ]
       }
     </script>
-
-    <!-- JSON-LD Schema for Service -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Premium Fish & Seafood Delivery",
-        "description": "Premium quality fresh and frozen fish, seafood, and sustainable fishing products with fast delivery",
-        "provider": {
-          "@type": "Organization",
-          "name": "Olambola International",
-          "url": "https://olambolainternational.com"
-        },
-        "areaServed": ["NG", "US"],
-        "priceRange": "$$",
-        "image": "https://olambolainternational.com/olambola-logo.png"
-      }
-    </script>
-
-    <!-- JSON-LD Schema for Breadcrumb Navigation -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://olambolainternational.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Premium Fish & Seafood",
-            "item": "https://olambolainternational.com#products"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Our Services",
-            "item": "https://olambolainternational.com#services"
-          }
-        ]
-      }
-    </script>
-
-    <!-- JSON-LD Schema for AggregateOffer (Products/Services) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "AggregateOffer",
-        "priceCurrency": "USD",
-        "priceRange": "$20 - $500",
-        "name": "Premium Fish & Seafood Products",
-        "description": "Wide selection of premium quality fish and seafood products",
-        "availability": "https://schema.org/InStock",
-        "url": "https://olambolainternational.com",
-        "seller": {
-          "@type": "Organization",
-          "name": "Olambola International",
-          "url": "https://olambolainternational.com"
-        }
-      }
-    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

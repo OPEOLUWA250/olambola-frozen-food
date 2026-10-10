@@ -1,88 +1,126 @@
-export default function Footer({ onNavigate }) {
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTiktok,
+  faFacebookF,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faPhone,
+  faEnvelope,
+  faLocationDot,
+  faClock,
+} from "@fortawesome/free-solid-svg-icons";
+import { site, whatsappLink } from "../config/site";
+
+const links = [
+  { label: "Home", to: "/" },
+  { label: "Products", to: "/#products" },
+  { label: "About Us", to: "/about" },
+  { label: "Training", to: "/training" },
+  { label: "Contact", to: "/contact" },
+];
+
+const socials = [
+  { label: "TikTok", href: site.socials.tiktok, icon: faTiktok },
+  { label: "Facebook", href: site.socials.facebook, icon: faFacebookF },
+  { label: "WhatsApp", href: whatsappLink(), icon: faWhatsapp },
+];
+
+export default function Footer() {
   return (
-    <footer className="bg-black text-white py-8 mt-16">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
-          <div>
-            <h3 className="text-2xl font-bold mb-2">OlambolaFoods</h3>
-            <p className="text-white/80">
-              Premium quality frozen foods delivered to your door.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-white/80">
-              <li>
-                <button
-                  onClick={() => onNavigate && onNavigate("home")}
-                  className="hover:text-white transition-colors bg-none border-none cursor-pointer"
+    <footer className="bg-brand-950 text-brand-100">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 md:grid-cols-2 md:px-6 lg:grid-cols-[1.4fr_1fr_1.3fr]">
+        <div>
+          <img
+            src="/brand/logo-white.png"
+            alt="Olambola International"
+            width="640"
+            height="150"
+            loading="lazy"
+            className="h-11 w-auto"
+          />
+          <p className="mt-5 max-w-sm leading-relaxed text-brand-200">
+            Quality imported frozen fish, by the carton, for homes, retailers
+            and businesses across Lagos.
+          </p>
+          <ul className="mt-6 flex gap-3">
+            {socials.map((s) => (
+              <li key={s.label}>
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${site.name} on ${s.label}`}
+                  className="flex size-11 items-center justify-center rounded-full bg-white/10 text-lg text-white transition-colors hover:bg-white/20"
                 >
-                  Home
-                </button>
+                  <FontAwesomeIcon icon={s.icon} />
+                </a>
               </li>
-              <li>
-                <button
-                  onClick={() => onNavigate && onNavigate("about")}
-                  className="hover:text-white transition-colors bg-none border-none cursor-pointer"
-                >
-                  About Us
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onNavigate && onNavigate("contact")}
-                  className="hover:text-white transition-colors bg-none border-none cursor-pointer"
-                >
-                  Contact Us
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social Media */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
-            <div className="flex gap-4">
-              <a
-                href="https://www.tiktok.com/@olambola"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 flex items-center justify-center"
-              >
-                <i className="fab fa-tiktok text-xl"></i>
-              </a>
-              <a
-                href="https://www.facebook.com/olambola"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 flex items-center justify-center"
-              >
-                <i className="fab fa-facebook text-xl"></i>
-              </a>
-              <a
-                href="https://wa.me/2349162964829"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 flex items-center justify-center"
-              >
-                <i className="fab fa-whatsapp text-xl"></i>
-              </a>
-            </div>
-          </div>
+            ))}
+          </ul>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-white/20 pt-8">
-          <div className="text-center text-white/80">
-            <p>
-              &copy; {new Date().getFullYear()} OlambolaFoods. All rights
-              reserved.
-            </p>
-          </div>
+        <div>
+          <h2 className="font-display text-sm font-bold tracking-[0.14em] text-white uppercase">
+            Explore
+          </h2>
+          <ul className="mt-5 space-y-3">
+            {links.map((l) => (
+              <li key={l.label}>
+                <Link to={l.to} className="transition-colors hover:text-white">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
+
+        <div>
+          <h2 className="font-display text-sm font-bold tracking-[0.14em] text-white uppercase">
+            Get in touch
+          </h2>
+          <ul className="mt-5 space-y-4">
+            <li className="flex gap-3">
+              <FontAwesomeIcon icon={faPhone} className="mt-1 text-brand-300" />
+              <a href={site.phone.href} className="hover:text-white">
+                {site.phone.display}
+              </a>
+            </li>
+            <li className="flex gap-3">
+              <FontAwesomeIcon
+                icon={faEnvelope}
+                className="mt-1 text-brand-300"
+              />
+              <a href={`mailto:${site.email}`} className="hover:text-white">
+                {site.email}
+              </a>
+            </li>
+            <li className="flex gap-3">
+              <FontAwesomeIcon icon={faClock} className="mt-1 text-brand-300" />
+              <span>
+                {site.hours.days}
+                <br />
+                {site.hours.time}
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <FontAwesomeIcon
+                icon={faLocationDot}
+                className="mt-1 text-brand-300"
+              />
+              <span>{site.location}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <p className="mx-auto max-w-7xl px-4 py-6 text-sm text-brand-300 md:px-6">
+          &copy;{" "}
+          <span suppressHydrationWarning>{new Date().getFullYear()}</span>{" "}
+          {site.name}. All rights reserved.
+        </p>
       </div>
     </footer>
   );

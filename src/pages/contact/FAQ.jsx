@@ -1,105 +1,59 @@
-import { useState, useEffect } from "react";
+import { useId, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faqs } from "../../data/faqs";
+import { SectionHeading } from "../../components/ui";
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const faqs = [
-    {
-      question: "How do I order from Olambola Foods?",
-      answer:
-        "You can place orders through our website by clicking the 'Order Now' button, or contact us directly via WhatsApp at +234 916 296 4829 for personalized assistance.",
-    },
-    {
-      question: "Do you offer bulk orders?",
-      answer:
-        "Yes! We offer special pricing for bulk orders. Please contact us directly to discuss your bulk requirements and get a custom quote.",
-    },
-    {
-      question: "What are your delivery options?",
-      answer:
-        "We offer fast and reliable delivery throughout Lagos. Delivery times and costs vary based on location. Contact us for specific delivery details.",
-    },
-    {
-      question: "Are your products sustainably sourced?",
-      answer:
-        "We prioritize quality and freshness in all our frozen food products. We work with trusted suppliers to ensure the best standards for our customers.",
-    },
-  ];
-
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  // Add FAQPage schema markup
-  useEffect(() => {
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    };
-
-    let script = document.querySelector(
-      'script[type="application/ld+json"][data-faq="true"]',
-    );
-    if (script) {
-      script.remove();
-    }
-    script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.setAttribute("data-faq", "true");
-    script.textContent = JSON.stringify(faqSchema);
-    document.head.appendChild(script);
-
-    return () => {
-      script.remove();
-    };
-  }, [faqs]);
+  const [openIndex, setOpenIndex] = useState(0);
+  const id = useId();
 
   return (
-    <div className="max-w-3xl mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-[#1E40AF] mb-4">
-          Frequently Asked Questions
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-[#1E40AF] via-blue-400 to-cyan-400 mx-auto rounded-full"></div>
-      </div>
+    <div className="mx-auto max-w-3xl">
+      <SectionHeading eyebrow="FAQ" title="Frequently Asked Questions" />
 
-      <div className="space-y-4">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            <button
-              onClick={() => toggleFAQ(index)}
-              className="w-full px-6 py-5 flex items-center justify-between hover:bg-white/20 transition-colors"
+      <div className="space-y-3">
+        {faqs.map((faq, index) => {
+          const open = openIndex === index;
+          const buttonId = `${id}-q${index}`;
+          const panelId = `${id}-a${index}`;
+          return (
+            <div
+              key={faq.question}
+              className={`rounded-2xl bg-white ring-1 transition-shadow ${
+                open ? "shadow-md ring-brand-200" : "ring-slate-200"
+              }`}
             >
-              <h3 className="text-lg font-semibold text-gray-800 text-left">
-                {faq.question}
+              <h3 className="font-sans text-base">
+                <button
+                  type="button"
+                  id={buttonId}
+                  aria-expanded={open}
+                  aria-controls={panelId}
+                  onClick={() => setOpenIndex(open ? null : index)}
+                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-lg font-semibold text-slate-900"
+                >
+                  {faq.question}
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className={`shrink-0 text-brand-700 transition-transform duration-300 ${
+                      open ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
               </h3>
-              <span
-                className={`text-2xl text-[#1E40AF] transition-transform duration-300 ${
-                  openIndex === index ? "rotate-180" : ""
-                }`}
+              <div
+                id={panelId}
+                role="region"
+                aria-labelledby={buttonId}
+                hidden={!open}
+                className="px-6 pb-6 leading-relaxed text-slate-600"
               >
-                ▼
-              </span>
-            </button>
-
-            {openIndex === index && (
-              <div className="px-6 py-5 border-t-2 border-[#1E40AF]/20 bg-white/20">
-                <p className="text-gray-700">{faq.answer}</p>
+                {faq.answer}
               </div>
-            )}
-          </div>
-        ))}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

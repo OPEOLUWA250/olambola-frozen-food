@@ -1,48 +1,43 @@
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { whatsappLink } from "../config/site";
 
 export default function FloatingActions() {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowBackToTop(true);
-      } else {
-        setShowBackToTop(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setShowBackToTop(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <div className="fixed right-6 bottom-6 z-40 flex flex-col gap-4">
-      {/* WhatsApp Button */}
+    <div className="fixed right-4 bottom-4 z-40 flex flex-col items-center gap-3 md:right-6 md:bottom-6">
+      <button
+        type="button"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Back to top"
+        tabIndex={showBackToTop ? 0 : -1}
+        className={`flex size-11 items-center justify-center rounded-full bg-white text-brand-700 shadow-lg ring-1 ring-slate-200 transition-all duration-300 hover:bg-brand-50 ${
+          showBackToTop
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-3 opacity-0"
+        }`}
+      >
+        <FontAwesomeIcon icon={faArrowUp} />
+      </button>
+
       <a
-        href="https://wa.me/2349162964829"
+        href={whatsappLink("Hello Olambola, I'd like to make an enquiry.")}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-        aria-label="Contact us on WhatsApp"
+        aria-label="Chat with us on WhatsApp"
+        className="flex size-14 items-center justify-center rounded-full bg-[#25D366] text-3xl text-white shadow-lg shadow-green-900/20 transition-transform duration-300 hover:scale-105"
       >
-        <i className="fab fa-whatsapp text-2xl"></i>
+        <FontAwesomeIcon icon={faWhatsapp} />
       </a>
-
-      {/* Back to Top Button */}
-      {showBackToTop && (
-        <button
-          onClick={scrollToTop}
-          className="w-14 h-14 bg-[#1E40AF] hover:bg-[#1E40AF]/90 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-          aria-label="Back to top"
-        >
-          <i className="fas fa-arrow-up text-xl"></i>
-        </button>
-      )}
     </div>
   );
 }

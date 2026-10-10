@@ -1,44 +1,85 @@
-export default function ContactCards() {
-  const contacts = [
-    {
-      title: "Phone",
-      content: "+2349162964829",
-      subtext: "Mon-Fri, 9AM-6PM EST",
-      icon: "fas fa-phone",
-    },
-    {
-      title: "Email",
-      content: "info@olambola.com",
-      subtext: "We'll respond within 24 hours",
-      icon: "fas fa-envelope",
-    },
-    {
-      title: "Location",
-      content: "Lagos, Nigeria",
-      subtext: "West Africa",
-      icon: "fas fa-map-marker-alt",
-    },
-  ];
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import {
+  faPhone,
+  faEnvelope,
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
+import { site, whatsappLink } from "../../config/site";
 
+const contacts = [
+  {
+    title: "WhatsApp",
+    content: site.phone.display,
+    subtext: "Fastest way to order",
+    icon: faWhatsapp,
+    href: whatsappLink("Hello Olambola, I'd like to make an enquiry."),
+    external: true,
+  },
+  {
+    title: "Phone",
+    content: site.phone.display,
+    subtext: `${site.hours.days}, ${site.hours.time}`,
+    icon: faPhone,
+    href: site.phone.href,
+  },
+  {
+    title: "Email",
+    content: site.email,
+    subtext: "We'll respond within 24 hours",
+    icon: faEnvelope,
+    href: `mailto:${site.email}`,
+  },
+  {
+    title: "Location",
+    content: site.location,
+    subtext: "Delivering across Lagos",
+    icon: faLocationDot,
+  },
+];
+
+export default function ContactCards() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-      {contacts.map((contact, index) => (
-        <div
-          key={index}
-          className="bg-white/40 backdrop-blur-md border-2 border-[#1E40AF]/30 rounded-2xl p-6 text-center hover:bg-white/50 transition-all duration-300 shadow-lg"
-        >
-          <div className="text-5xl mb-4 text-[#1E40AF]">
-            <i className={contact.icon}></i>
-          </div>
-          <h3 className="text-2xl font-bold text-[#1E40AF] mb-2">
-            {contact.title}
-          </h3>
-          <p className="text-gray-800 font-semibold text-lg mb-2">
-            {contact.content}
-          </p>
-          <p className="text-gray-600 text-sm">{contact.subtext}</p>
-        </div>
-      ))}
-    </div>
+    <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {contacts.map((c) => {
+        const body = (
+          <>
+            <span className="flex size-12 items-center justify-center rounded-2xl bg-brand-50 text-xl text-brand-700 transition-colors group-hover:bg-brand-700 group-hover:text-white">
+              <FontAwesomeIcon icon={c.icon} />
+            </span>
+            <span className="mt-5 block text-sm font-bold tracking-[0.12em] text-slate-500 uppercase">
+              {c.title}
+            </span>
+            <span className="mt-1 block font-display text-lg font-bold wrap-break-word text-slate-900">
+              {c.content}
+            </span>
+            <span className="mt-1 block text-sm text-slate-500">
+              {c.subtext}
+            </span>
+          </>
+        );
+        const cardClass =
+          "group block h-full rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200";
+
+        return (
+          <li key={c.title}>
+            {c.href ? (
+              <a
+                href={c.href}
+                {...(c.external && {
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                })}
+                className={`${cardClass} transition-shadow hover:shadow-lg`}
+              >
+                {body}
+              </a>
+            ) : (
+              <div className={cardClass}>{body}</div>
+            )}
+          </li>
+        );
+      })}
+    </ul>
   );
 }
